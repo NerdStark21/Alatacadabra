@@ -37,6 +37,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+<<<<<<< HEAD
     myglwidget.cpp \
     personnage.cpp \
     pacman.cpp \
@@ -47,3 +48,14 @@ HEADERS += \
     personnage.h \
     pacman.h \
     fantome.h
+=======
+        mainwindow.cpp \
+    imageanalyzing.cpp
+
+HEADERS += \
+        mainwindow.h \
+    imageanalyzing.h
+
+FORMS += \
+        mainwindow.ui
+>>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
