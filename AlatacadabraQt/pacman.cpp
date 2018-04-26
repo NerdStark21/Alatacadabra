@@ -1,6 +1,14 @@
 #include "pacman.h"
 
-pacman::pacman()
+Pacman::Pacman()
 {
+
+}
+
+void Pacman::getPosition() const{
+
+}
+
+void Pacman::move() const{
 
 }

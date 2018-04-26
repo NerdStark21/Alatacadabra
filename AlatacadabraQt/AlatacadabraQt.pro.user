@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< HEAD
-<!-- Written by QtCreator 4.6.0, 2018-04-24T17:48:25. -->
-=======
-<!-- Written by QtCreator 4.5.1, 2018-04-24T17:32:10. -->
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
+<!-- Written by QtCreator 4.6.0, 2018-04-26T13:49:59. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{a275ca08-ca6b-444b-aeda-6b885e5cb2ac}</value>
+  <value type="QByteArray">{f42b28cd-5a05-4fa2-9af3-8616b7e91c86}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -63,24 +59,14 @@
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
-<<<<<<< HEAD
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.10.0 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.10.0 MinGW 32bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt5.5100.win32_mingw53_kit</value>
-=======
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.10.1 MinGW 32bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.10.1 MinGW 32bit</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt5.5101.win32_mingw53_kit</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:/Mon_bureau/TSE/Cours/FISE2/S8/Couleur/Chef oeuvre/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_0_MinGW_32bit-Debug</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Clément/Documents/FISE2/AlataCadabra/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_1_MinGW_32bit-Debug</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -104,11 +90,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Compiler</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
@@ -124,11 +106,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Nettoyer</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
@@ -136,21 +114,13 @@
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Debug</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Debug</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:/Mon_bureau/TSE/Cours/FISE2/S8/Couleur/Chef oeuvre/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_0_MinGW_32bit-Release</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Clément/Documents/FISE2/AlataCadabra/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_1_MinGW_32bit-Release</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -174,11 +144,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Compiler</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
@@ -194,11 +160,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Nettoyer</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
@@ -206,21 +168,13 @@
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Release</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Release</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:/Mon_bureau/TSE/Cours/FISE2/S8/Couleur/Chef oeuvre/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_0_MinGW_32bit-Profile</value>
-=======
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Clément/Documents/FISE2/AlataCadabra/Alatacadabra/build-AlatacadabraQt-Desktop_Qt_5_10_1_MinGW_32bit-Profile</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -244,11 +198,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Compiler</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
     </valuemap>
@@ -264,11 +214,7 @@
       <value type="QString" key="Qt4ProjectManager.MakeStep.MakeCommand"></value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
-<<<<<<< HEAD
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
-=======
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Nettoyer</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
     </valuemap>
@@ -276,11 +222,7 @@
     <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Profile</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Profile</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
     <value type="bool" key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild">true</value>
@@ -294,11 +236,7 @@
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
     </valuemap>
     <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
-<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Configuration de déploiement</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Déployer localement</value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
    </valuemap>
@@ -344,7 +282,6 @@
      <value type="int">13</value>
      <value type="int">14</value>
     </valuelist>
-<<<<<<< HEAD
     <value type="int" key="PE.EnvironmentAspect.Base">-1</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Arguments"></value>
@@ -353,19 +290,6 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
-=======
-    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
-    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">AlatacadabraQt</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Clément/Documents/FISE2/AlataCadabra/Alatacadabra/AlatacadabraQt/AlatacadabraQt.pro</value>
-    <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">AlatacadabraQt.pro</value>
-    <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default"></value>
->>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

@@ -3,13 +3,12 @@
 
 #include "personnage.h"
 
-class fantome : public personnage
+class Fantome : public Personnage
 {
 public:
-    fantome();
-
+    Fantome();
     void getPosition() const;
-    void move(int direction) const;
+    void move() const;
 };
 
 #endif // FANTOME_H

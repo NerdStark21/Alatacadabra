@@ -1,6 +1,14 @@
 #include "fantome.h"
 
-fantome::fantome()
+Fantome::Fantome()
 {
+
+}
+
+void Fantome::getPosition() const{
+
+}
+
+void Fantome::move() const{
 
 }
