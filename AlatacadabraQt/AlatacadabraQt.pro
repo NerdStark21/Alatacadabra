@@ -1,12 +1,24 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-03-23T17:35:00
+# Project created by QtCreator 2018-04-24T17:48:22
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui opengl widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+# ajout des libs au linker
+win32 {
+    win32-msvc* {
+        LIBS     += opengl32.lib glu32.lib
+    } else {
+        LIBS     += -lopengl32 -lglu32
+    }
+}
+unix {
+        LIBS     += -lGL -lGLU
+}
 
 TARGET = AlatacadabraQt
 TEMPLATE = app
@@ -25,6 +37,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+<<<<<<< HEAD
+    myglwidget.cpp \
+    personnage.cpp \
+    pacman.cpp \
+    fantome.cpp
+
+HEADERS += \
+    myglwidget.h \
+    personnage.h \
+    pacman.h \
+    fantome.h
+=======
         mainwindow.cpp \
     imageanalyzing.cpp
 
@@ -34,3 +58,4 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+>>>>>>> f4c2b11eeefccccf8ef9a151134be9e1fd217bb8
