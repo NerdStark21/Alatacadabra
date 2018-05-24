@@ -8,7 +8,10 @@ clc;
 %28080124_1708293462552016_10489864_o
 %28080637_1708293365885359_1365892258_o
 
-I = double(imread('BDD/main1.jpg')) / 255;
+database_dir = '../images_main/';
+fnames = dir(fullfile(database_dir, '*.jpg'));
+num_files = size(fnames, 1);
+I = double(imread(sprintf('%s%s', database_dir, fnames(1).name))) / 255;
 
 figure;
 imshow(I, []);
