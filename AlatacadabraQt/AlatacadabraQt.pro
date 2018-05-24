@@ -5,6 +5,27 @@
 #-------------------------------------------------
 
 QT       += core gui opengl widgets
+CONFIG	 += c++14
+TEMPLATE  = app
+
+# ajout des libs au linker
+win32 {
+    win32-msvc* {
+        LIBS     += opengl32.lib glu32.lib
+    } else {
+        LIBS     += -lopengl32 -lglu32
+    }
+}
+unix {
+        LIBS     += -lGL -lGLU
+}
+
+LIBS += -L$$(OPENCV_DIR)\lib \
+    -lopencv_core2413 \
+    -lopencv_highgui2413 \
+    -lopencv_imgproc2413 \
+    -lopencv_features2d2413 \
+    -lopencv_calib3d2413
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,16 +48,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     partie.cpp \
-    personnage.cpp \
-    fantome.cpp \
-    pacman.cpp
+    snake.cpp \
+    wall.cpp \
+    model.cpp \
+    bodypart.cpp
 
 HEADERS += \
         mainwindow.h \
     partie.h \
-    personnage.h \
-    fantome.h \
-    pacman.h
+    snake.h \
+    wall.h \
+    model.h \
+    bodypart.h
 
 FORMS += \
         mainwindow.ui
+
+INCLUDEPATH +=$$(OPENCV_DIR)\..\..\include
