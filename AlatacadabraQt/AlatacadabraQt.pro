@@ -56,7 +56,8 @@ SOURCES += \
     snake.cpp \
     wall.cpp \
     model.cpp \
-    bodypart.cpp
+    bodypart.cpp \
+    detection.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -69,7 +70,8 @@ HEADERS += \
     snake.h \
     wall.h \
     model.h \
-    bodypart.h
+    bodypart.h \
+    detection.h
 
 FORMS += \
         mainwindow.ui

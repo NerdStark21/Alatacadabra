@@ -3,6 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <GL/glu.h>
 #include <vector>
 
 using namespace cv;
@@ -14,7 +15,7 @@ private:
     int depth_;
 
 public:
-    Wall(Rect stuff, int depth);
+    Wall(Rect stuff);
     void drawWall();
 };
 
