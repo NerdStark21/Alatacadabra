@@ -1,2 +1,7 @@
 *.pro.user
-AlatacadabraQt/AlatacadabraQt.pro.user
+
+
+
+/build-AlatacadabraQt-Desktop_Qt_5_10_0_MinGW_32bit-Debug
+
+/build-AlatacadabraQt-Desktop_Qt_5_10_1_MinGW_32bit-Debug

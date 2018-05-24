@@ -10,12 +10,12 @@
 
 // C'est dans cette classe qu'on va faire tout l'affichage
 
-class Partie : public QWidget
+class Partie : public QGLWidget
 {
 public:
-    Partie(QWidget*);
+    Partie(QWidget*parent);
     void initializeGL();
-
+    void updateGame();
 };
 
 #endif // PARTIE_H
