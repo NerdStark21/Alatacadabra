@@ -48,10 +48,11 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     partie.cpp \
-    personnage.cpp \
-    fantome.cpp \
-    pacman.cpp \
-    myglwidget.cpp
+    myglwidget.cpp \
+    bodypart.cpp \
+    model.cpp \
+    snake.cpp \
+    wall.cpp\
     snake.cpp \
     wall.cpp \
     model.cpp \
@@ -60,10 +61,11 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     partie.h \
-    personnage.h \
-    fantome.h \
-    pacman.h \
-    myglwidget.h
+    myglwidget.h \
+    bodypart.h \
+    model.h \
+    snake.h \
+    wall.h\
     snake.h \
     wall.h \
     model.h \
