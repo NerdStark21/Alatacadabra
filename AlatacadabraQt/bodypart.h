@@ -9,7 +9,7 @@ using namespace cv;
 class BodyPart
 {
 private:
-    Point center;
+    Point center_;
     int radius_;
 
 public:
