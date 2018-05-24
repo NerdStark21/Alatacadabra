@@ -3,8 +3,10 @@
 using namespace cv;
 using namespace std;
 
-Wall::Wall(Rect stuff, int depth)
-    : stuff_(stuff), depth_(depth){}
+Wall::Wall(Rect stuff)
+    : stuff_(stuff){
+    depth_ = 5;
+}
 
 void Wall::drawWall(){
     glPushMatrix();

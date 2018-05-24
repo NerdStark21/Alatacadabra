@@ -6,7 +6,6 @@
 #include <QtOpenGL/QGLWidget>
 #include <QDebug>
 #include <QTimer>
-#include <GL/glu.h>
 #include <qdebug.h>
 #include "snake.h"
 #include "wall.h"
