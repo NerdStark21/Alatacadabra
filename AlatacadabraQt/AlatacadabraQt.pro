@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------
 
+QT       += core gui
+
 QT       += core gui opengl widgets
 CONFIG	 += c++14
 TEMPLATE  = app

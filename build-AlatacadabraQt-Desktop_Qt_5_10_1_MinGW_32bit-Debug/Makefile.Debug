@@ -385,6 +385,73 @@ debug/moc_myglwidget.cpp: C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QWi
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/QGLWidget \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qgl.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopengl.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qt_windows.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopengles2ext.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopenglext.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpaintengine.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpen.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QSurfaceFormat \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qsurfaceformat.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QKeyEvent \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qbasictimer.h \
+		../AlatacadabraQt/model.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QApplication \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qapplication.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qcoreapplication.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qeventloop.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qguiapplication.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QDebug \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/wall.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/opencv.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/opencv_modules.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/core_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/types_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/core.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/version.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/operations.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/mat.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/miniflann.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/defines.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/config.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/imgproc_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/types_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/imgproc.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/photo/photo.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/photo/photo_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/video.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/tracking.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/background_segm.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/features2d/features2d.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/objdetect/objdetect.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/calib3d/calib3d.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/affine.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/ml/ml.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/contrib.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/retina.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/openfabmap.hpp \
+		../AlatacadabraQt/partie.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QMouseEvent \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QColor \
 		../AlatacadabraQt/myglwidget.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/bin/moc.exe
@@ -1090,6 +1157,30 @@ debug/myglwidget.o: ../AlatacadabraQt/myglwidget.cpp ../AlatacadabraQt/myglwidge
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qtouchdevice.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/QGLWidget \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qgl.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopengl.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qt_windows.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopengles2ext.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qopenglext.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpaintengine.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpainter.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qpen.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QSurfaceFormat \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qsurfaceformat.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QKeyEvent \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QTimer \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qbasictimer.h \
+		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -1097,7 +1188,42 @@ debug/myglwidget.o: ../AlatacadabraQt/myglwidget.cpp ../AlatacadabraQt/myglwidge
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QDebug \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/wall.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/opencv.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/opencv_modules.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/core_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/types_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/core.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/version.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/operations.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/mat.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/miniflann.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/defines.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/flann/config.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/imgproc_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/types_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/imgproc/imgproc.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/photo/photo.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/photo/photo_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/video.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/tracking.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/video/background_segm.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/features2d/features2d.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/objdetect/objdetect.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/calib3d/calib3d.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/core/affine.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/ml/ml.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/contrib.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/retina.hpp \
+		C:/OpenCV/opencv-2.4.13.5/build/install/include/opencv2/contrib/openfabmap.hpp \
+		../AlatacadabraQt/partie.h \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QMouseEvent \
+		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\myglwidget.o ..\AlatacadabraQt\myglwidget.cpp
 
 debug/bodypart.o: ../AlatacadabraQt/bodypart.cpp ../AlatacadabraQt/bodypart.h \
