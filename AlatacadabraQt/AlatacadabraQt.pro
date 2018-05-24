@@ -29,14 +29,16 @@ SOURCES += \
     partie.cpp \
     personnage.cpp \
     fantome.cpp \
-    pacman.cpp
+    pacman.cpp \
+    myglwidget.cpp
 
 HEADERS += \
         mainwindow.h \
     partie.h \
     personnage.h \
     fantome.h \
-    pacman.h
+    pacman.h \
+    myglwidget.h
 
 FORMS += \
         mainwindow.ui
