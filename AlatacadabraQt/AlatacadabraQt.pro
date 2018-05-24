@@ -50,28 +50,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     partie.cpp \
-    myglwidget.cpp \
     bodypart.cpp \
-    model.cpp \
     snake.cpp \
     wall.cpp\
-    snake.cpp \
-    wall.cpp \
     model.cpp \
-    bodypart.cpp \
     detection.cpp
 
 HEADERS += \
         mainwindow.h \
     partie.h \
-    myglwidget.h \
-    bodypart.h \
     model.h \
-    snake.h \
     wall.h\
     snake.h \
-    wall.h \
-    model.h \
     bodypart.h \
     detection.h
 
