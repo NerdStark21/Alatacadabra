@@ -4,6 +4,8 @@
 #
 #-------------------------------------------------
 
+QT       += core gui
+
 QT       += core gui opengl widgets
 CONFIG	 += c++14
 TEMPLATE  = app
@@ -48,26 +50,30 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     partie.cpp \
-    personnage.cpp \
-    fantome.cpp \
-    pacman.cpp \
-    myglwidget.cpp
+    myglwidget.cpp \
+    bodypart.cpp \
+    model.cpp \
+    snake.cpp \
+    wall.cpp\
     snake.cpp \
     wall.cpp \
     model.cpp \
-    bodypart.cpp
+    bodypart.cpp \
+    detection.cpp
 
 HEADERS += \
         mainwindow.h \
     partie.h \
-    personnage.h \
-    fantome.h \
-    pacman.h \
-    myglwidget.h
+    myglwidget.h \
+    bodypart.h \
+    model.h \
+    snake.h \
+    wall.h\
     snake.h \
     wall.h \
     model.h \
-    bodypart.h
+    bodypart.h \
+    detection.h
 
 FORMS += \
         mainwindow.ui

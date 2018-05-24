@@ -93,7 +93,12 @@ void MyGLWidget::paintGL()
     //cout<<"on est dans paint"<<endl;
 
     // Mise à jour du jeu (affichage + déroulement de la partie)
-    //updateModel();
+    updateModel();
+
+}
+
+
+void MyGLWidget::updateModel(){
 
 }
 
