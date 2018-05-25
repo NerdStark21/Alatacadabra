@@ -15,6 +15,11 @@ private:
 public:
     BodyPart(Point center, int radius);
     void drawBodyPart();
+    Point getCenter();
+    void setCenter(Point p);
 };
+
+
+
 
 #endif // BODYPART_H

@@ -6,3 +6,11 @@ BodyPart::BodyPart(Point center, int radius)
 void drawBodyPart(){
 
 }
+
+Point BodyPart::getCenter(){
+    return center_;
+}
+
+void BodyPart::setCenter(Point p){
+    center_=p;
+}

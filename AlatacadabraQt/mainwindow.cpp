@@ -40,9 +40,11 @@ MainWindow::MainWindow(QWidget *parent) :
     detection_ = new Detection();
 }
 
+
 MainWindow::~MainWindow()
 {
 }
+
 
 // Fonction d'initialisation
 void MainWindow::initializeGL()
@@ -54,6 +56,7 @@ void MainWindow::initializeGL()
     // Activation du zbuffer
     glEnable(GL_DEPTH_TEST);
 }
+
 
 // Fonction de redimensionnement
 void MainWindow::resizeGL(int width, int height)
@@ -75,6 +78,7 @@ void MainWindow::resizeGL(int width, int height)
     //Réinitialisation
     glLoadIdentity();
 }
+
 
 // Fonction d'affichage
 void MainWindow::paintGL()
