@@ -32,3 +32,15 @@ void Model::drawWalls(){
     for (itw = walls_.begin(); itw != walls_.end(); itw++)
         itw->drawWall();
 }
+
+
+/*
+ * Create a fruit on a random free space
+ *
+ *
+ */
+
+void Model::createFruit(){
+    //
+    fruits_.push_back(fraise);
+}

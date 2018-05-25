@@ -7,12 +7,14 @@
 class Snake
 {
 private:
-    // liste des indices auxquels on a les points du snake
-    vector<BodyPart> snake_;
-    // Diamètre des éléments du snake
-    int radius_;
-    Point direction_;
+    // Vecteur contenant toutes les parties du corps du snake
+    Vector<BodyPart> body_;
     int size_;
+    Point direction_;
+
+
+    int radius_;
+
 
     Point topLeft_;
     Point bottomRight_;
