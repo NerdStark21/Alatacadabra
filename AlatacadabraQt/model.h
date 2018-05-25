@@ -7,9 +7,9 @@
 #include <QDebug>
 #include <QTimer>
 #include <qdebug.h>
-#include "snake.h"
 #include "wall.h"
 #include "partie.h"
+#include "grid.h"
 
 using namespace std;
 
@@ -21,6 +21,8 @@ private:
 public:
     Model();
     void drawWalls();
+    void drawGrid();
+    void updateGame();
 };
 
 #endif // MODEL_H
