@@ -2,7 +2,7 @@
 
 Partie::Partie(QWidget * parent): QGLWidget(parent)
 {
-
+    score_=0;
 }
 
 void Partie::initializeGL(){

@@ -16,6 +16,8 @@ public:
     Partie(QWidget*parent);
     void initializeGL();
     void updateGame();
+private:
+    int score_;
 };
 
 #endif // PARTIE_H

@@ -14,6 +14,9 @@ private:
     Point direction_;
     int size_;
 
+    Point topLeft_;
+    Point bottomRight_;
+
 public:
     Snake();
     void drawNode();
