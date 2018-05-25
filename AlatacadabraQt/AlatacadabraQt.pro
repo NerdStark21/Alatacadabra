@@ -54,8 +54,7 @@ SOURCES += \
     wall.cpp\
     model.cpp \
     detection.cpp \
-    grid.cpp \
-    node.cpp
+    bodypart.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -64,8 +63,7 @@ HEADERS += \
     wall.h\
     snake.h \
     detection.h \
-    grid.h \
-    node.h
+    bodypart.h
 
 FORMS += \
         mainwindow.ui

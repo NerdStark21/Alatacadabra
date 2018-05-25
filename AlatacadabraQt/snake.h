@@ -8,7 +8,7 @@ class Snake
 {
 private:
     // liste des indices auxquels on a les points du snake
-    vector<int> listNode_;
+    vector<BodyPart> snake_;
     // Diamètre des éléments du snake
     int radius_;
     Point direction_;
