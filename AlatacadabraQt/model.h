@@ -28,6 +28,7 @@ private:
     int width_;
     int heigth_;
 
+
 public:
     Model();
     void drawWalls();

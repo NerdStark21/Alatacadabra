@@ -13,6 +13,7 @@ public:
     fruit();
     void setPosition(Point p);
     Point getPosition();
+
 private:
     Point position_;
 };
