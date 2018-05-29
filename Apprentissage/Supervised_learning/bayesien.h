@@ -13,7 +13,7 @@ public:
     bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> muBack, vector<float> sigmaBack);
     void probab_posteriori();
     void proba_totale();
-    bool regle_bayesienne(vector<float> x);
+    bool regle_bayesienne(vector<float> pixel);
     vector<float> getProbaTotale();
 
 private:
