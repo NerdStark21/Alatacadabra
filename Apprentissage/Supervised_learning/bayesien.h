@@ -11,13 +11,9 @@ class bayesien
 {
 public:
     bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> muBack, vector<float> sigmaBack);
-
     void probab_posteriori();
-
     void proba_totale();
-
     bool regle_bayesienne(vector<float> x);
-
     vector<float> getProbaTotale();
 
 private:

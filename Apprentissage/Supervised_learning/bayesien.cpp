@@ -37,10 +37,10 @@ vector<float> bayesien::getProbaTotale(){
     return proba_totale_;
 }
 
-bool bayesien::regle_bayesienne(vector<float> x)
+bool bayesien::regle_bayesienne(vector<float> pixel)
 {
-    skin_->vraisemblance(x);
-    background_->vraisemblance(x);
+    skin_->vraisemblance(pixel);
+    background_->vraisemblance(pixel);
     proba_totale();
     probab_posteriori();
     if(skin_->getPosteriori()>background_->getPosteriori())
@@ -49,4 +49,3 @@ bool bayesien::regle_bayesienne(vector<float> x)
     }
     return false;
 }
-

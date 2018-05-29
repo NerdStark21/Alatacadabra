@@ -9,6 +9,10 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Supervised_learning
+
+CONFIG   += console
+CONFIG   -= app_bundle
+
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -29,14 +33,28 @@ SOURCES += \
     skin.cpp \
     bayesien.cpp \
     background.cpp \
-    texture.cpp
+    texture.cpp \
+    direction.cpp \
+    imageutile.cpp
 
 HEADERS += \
         mainwindow.h \
     skin.h \
     bayesien.h \
     background.h \
-    texture.h
+    texture.h \
+    direction.h \
+    imageutile.h
 
 FORMS += \
         mainwindow.ui
+
+
+INCLUDEPATH +=$$(OPENCV_DIR)\..\..\include
+
+LIBS +=-L$$(OPENCV_DIR)\lib \
+    -lopencv_core2413 \
+    -lopencv_highgui2413 \
+    -lopencv_imgproc2413 \
+    -lopencv_features2d2413 \
+    -lopencv_calib3d2413
