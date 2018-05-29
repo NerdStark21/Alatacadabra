@@ -21,7 +21,6 @@ private:
 
 public:
     Snake();
-    void drawNode();
     void move();
     bool deadlyPLace();
     void eatFruit();

@@ -7,7 +7,7 @@
 using namespace cv;
 
 
-class fruit
+class Fruit
 {
 public:
     fruit();

@@ -19,6 +19,7 @@ private:
     vector<Wall> walls_;
     vector<Fruit> fruits_;
 
+
 public:
     Model();
     void drawWalls();
