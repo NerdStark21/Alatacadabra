@@ -7,12 +7,14 @@
 using namespace cv;
 
 
-class fruit
+class Fruit
 {
 public:
     fruit();
+    void setPosition(Point p);
+    Point getPosition();
 private:
-    Point position;
+    Point position_;
 };
 
 #endif // FRUIT_H

@@ -10,6 +10,12 @@
 #include "wall.h"
 #include "partie.h"
 #include "fruit.h"
+#include "snake.h"
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
+
+using namespace cv;
 
 using namespace std;
 
@@ -18,6 +24,9 @@ class Model
 private:
     vector<Wall> walls_;
     vector<Fruit> fruits_;
+    Snake snake_;
+    int width_;
+    int heigth_;
 
 public:
     Model();

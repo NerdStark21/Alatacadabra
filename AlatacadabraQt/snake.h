@@ -20,11 +20,13 @@ private:
     Point bottomRight_;
 
 public:
-    Snake();
+    Snake(int width, int heigth);
     void drawNode();
     void move();
     bool deadlyPLace();
     void eatFruit();
+    void setDirection(Point p);
+    Vector<BodyPart> getBody();
 };
 
 #endif // SNAKE_H

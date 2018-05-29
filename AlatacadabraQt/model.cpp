@@ -4,9 +4,13 @@ Model::Model()
 {
     qDebug()<<"Création du model"<<endl;
 
-    // Dimension du plateau de jeux
+    // Dimension du plateau de jeux en openGL
     int cote = 250;
     int epaisseur = 5;
+
+   // Dimension du plateau de jeu
+    width_=50;
+    heigth_=50;
 
     // Création des Rect des murs
     Rect coordUp(-cote/2, cote/2, cote, epaisseur);
@@ -25,6 +29,9 @@ Model::Model()
     walls_.push_back(wallDown);
     walls_.push_back(wallLeft);
     walls_.push_back(wallRight);
+
+    // Ajout du snake
+    Snake Snake_=new Snake(width,length);
 }
 
 void Model::drawWalls(){
@@ -41,6 +48,38 @@ void Model::drawWalls(){
  */
 
 void Model::createFruit(){
-    //
-    fruits_.push_back(fraise);
+    // Random point
+    Point position= new Point(rand() % width_ ,rand() % heigth_ );
+    fruit cherry= new fruit(position);
+    bool freeSpace=false;
+    while(!freeSpace){
+        freeSpace=true;
+        // Check if there is already a fruit there
+        for( Fruit apple : fruits_ ){
+            if (apple.getPosition()== cherry.getPosition){
+                freeSpace=false;
+                break;
+            }
+        }
+
+        // Check if there is already a bodypart there
+        for(BodyPart part:snake_.getBody()){
+            if(part.getCenter()==cherry.getPosition()){
+                freeSpace=false;
+                break;
+            }
+        }
+        // Get another point
+        position=Point(rand() % width_ ,rand() % heigth_ );
+    }
+
+    fruits_.push_back(cherry);
 }
+
+
+
+
+
+
+
+

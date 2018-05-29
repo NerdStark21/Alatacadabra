@@ -1,15 +1,20 @@
 #include "snake.h"
 
-Snake::Snake()
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
+
+using namespace cv;
+
+Snake::Snake(int width, int heigth)
 {
     // Limits of the playground
-    topLeft_=new Point(0,0);
-    bottomRight_= new Point(50,50);
+    topLeft_ = Point(0,0);
+    bottomRight_=  Point(width,heigth);
 
     // Create the snake with 1 bodypart
-    body_.push_back(new BodyPart(new Point(0,0)));
+    body_.push_back(BodyPart( Point(width/2,heigth/2),1));
     size_=1;
-    direction_=new Point(0,-1);
+    direction_=Point(0,-1);
     radius_=0.5;
 
 }
@@ -17,7 +22,7 @@ Snake::Snake()
 
 void Snake::move(){
     if(!deadlyPLace()){
-        body_[end].setCenter(body_[begin].getCenter()+direction_);
+        body_[body_.end()].setCenter(body_[body_.begin()].getCenter()+direction_);
     }
 }
 
@@ -38,4 +43,8 @@ bool Snake::deadlyPLace(){
 
 void Snake::setDirection(Point p){
     direction_=p;
+}
+
+Vector<BodyPart> Snake::getBody(){
+    return body_;
 }
