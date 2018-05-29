@@ -27,7 +27,7 @@ void Snake::eatFruit(){
 }
 
 
-bool Snake::deadlyPLace(){
+bool Snake::deadlyPlace(){
 
     Point nextPosition=body_[begin]+direction_;
     Rect gameBoard=new Rect(topLeft_,bottomRight_);

@@ -1,6 +1,6 @@
 #include "fruit.h"
 
-fruit::fruit()
+Fruit::Fruit()
 {
 
 }

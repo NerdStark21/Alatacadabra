@@ -10,7 +10,7 @@ using namespace cv;
 class Fruit
 {
 public:
-    fruit();
+    Fruit();
 private:
     Point position;
 };

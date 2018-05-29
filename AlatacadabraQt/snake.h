@@ -22,7 +22,7 @@ private:
 public:
     Snake();
     void move();
-    bool deadlyPLace();
+    bool deadlyPlace();
     void eatFruit();
 };
 
