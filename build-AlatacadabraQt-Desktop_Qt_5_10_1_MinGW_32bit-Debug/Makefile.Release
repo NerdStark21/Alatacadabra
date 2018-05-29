@@ -264,10 +264,7 @@ release/moc_mainwindow.cpp: C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/Q
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QColor \
 		ui_mainwindow.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -275,33 +272,6 @@ release/moc_mainwindow.cpp: C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/Q
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QMenuBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QToolBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QDebug \
 		../AlatacadabraQt/wall.h \
@@ -628,10 +598,7 @@ release/main.o: ../AlatacadabraQt/main.cpp ../AlatacadabraQt/mainwindow.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QColor \
 		ui_mainwindow.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -639,33 +606,6 @@ release/main.o: ../AlatacadabraQt/main.cpp ../AlatacadabraQt/mainwindow.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QMenuBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QToolBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QDebug \
 		../AlatacadabraQt/wall.h \
@@ -838,10 +778,7 @@ release/mainwindow.o: ../AlatacadabraQt/mainwindow.cpp ../AlatacadabraQt/mainwin
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qbasictimer.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/QColor \
 		ui_mainwindow.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -849,33 +786,6 @@ release/mainwindow.o: ../AlatacadabraQt/mainwindow.cpp ../AlatacadabraQt/mainwin
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QMenuBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QToolBar \
-		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtWidgets/QDesktopWidget \
 		C:/Qt/Qt5.10.1/5.10.1/mingw53_32/include/QtCore/QDebug \
 		../AlatacadabraQt/wall.h \

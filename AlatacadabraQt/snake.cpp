@@ -21,24 +21,25 @@ Snake::Snake(int width, int heigth)
 
 
 void Snake::move(){
-    if(!deadlyPLace()){
-        body_[body_.end()].setCenter(body_[body_.begin()].getCenter()+direction_);
+    if(!deadlyPlace()){
+        body_.back().setCenter(body_.front().getCenter()+direction_);
     }
 }
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
-    body_.push_back(new BodyPart(body_[end].getCenter());
+    body_.push_back(BodyPart(body_.back().getCenter(),1));
 }
 
 
 bool Snake::deadlyPlace(){
 
-    Point nextPosition=body_[begin]+direction_;
-    Rect gameBoard=new Rect(topLeft_,bottomRight_);
+    Point nextPosition=body_.front().getCenter()+direction_;
+    Rect gameBoard= Rect(topLeft_,bottomRight_);
     if(nextPosition.inside(gameBoard)){
-
+    return true;
     };
+    return true;
 }
 
 void Snake::setDirection(Point p){
