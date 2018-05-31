@@ -13,8 +13,11 @@ private:
     int radius_;
 
 public:
+    BodyPart();
     BodyPart(Point center, int radius);
     void drawBodyPart();
+
+
     Point getCenter();
     void setCenter(Point p);
 };

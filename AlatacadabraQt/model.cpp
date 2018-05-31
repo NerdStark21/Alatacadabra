@@ -1,5 +1,6 @@
 #include "model.h"
 
+
 Model::Model()
 {
     qDebug()<<"Création du model"<<endl;
@@ -31,7 +32,7 @@ Model::Model()
     walls_.push_back(wallRight);
 
     // Ajout du snake
-    Snake Snake_=new Snake(width,length);
+    snake_=Snake(width_,heigth_);
 }
 
 void Model::drawWalls(){
@@ -49,14 +50,14 @@ void Model::drawWalls(){
 
 void Model::createFruit(){
     // Random point
-    Point position= new Point(rand() % width_ ,rand() % heigth_ );
-    fruit cherry= new fruit(position);
+    Point position= Point(rand() % width_ ,rand() % heigth_ );
+    Fruit cherry= Fruit(position);
     bool freeSpace=false;
     while(!freeSpace){
         freeSpace=true;
         // Check if there is already a fruit there
         for( Fruit apple : fruits_ ){
-            if (apple.getPosition()== cherry.getPosition){
+            if (apple.getPosition()== cherry.getPosition()){
                 freeSpace=false;
                 break;
             }

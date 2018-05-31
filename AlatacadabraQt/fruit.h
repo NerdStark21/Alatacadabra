@@ -11,6 +11,7 @@ class Fruit
 {
 public:
     Fruit();
+    Fruit(Point position);
     void setPosition(Point p);
     Point getPosition();
 

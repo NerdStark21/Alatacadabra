@@ -3,6 +3,9 @@
 //BodyPart::BodyPart(Point center, int radius)
 //    : center_(center), radius_(radius){}
 
+BodyPart::BodyPart(){
+}
+
 BodyPart::BodyPart(Point center, int radius){
     center_=center;
     radius_=radius;
@@ -11,6 +14,7 @@ BodyPart::BodyPart(Point center, int radius){
 void drawBodyPart(){
 
 }
+
 
 Point BodyPart::getCenter(){
     return center_;

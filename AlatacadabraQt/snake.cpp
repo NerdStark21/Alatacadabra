@@ -5,6 +5,11 @@
 
 using namespace cv;
 
+Snake::Snake(){
+
+}
+
+
 Snake::Snake(int width, int heigth)
 {
     // Limits of the playground
@@ -12,7 +17,7 @@ Snake::Snake(int width, int heigth)
     bottomRight_=  Point(width,heigth);
 
     // Create the snake with 1 bodypart
-    body_.push_back(BodyPart( Point(width/2,heigth/2),1));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)),1));
     size_=1;
     direction_=Point(0,-1);
     radius_=0.5;
