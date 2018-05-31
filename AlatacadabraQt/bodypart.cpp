@@ -9,6 +9,8 @@ BodyPart::BodyPart(){
 BodyPart::BodyPart(Point center, int radius){
     center_=center;
     radius_=radius;
+    ball_quadric_= gluNewQuadric();
+
 }
 
 void drawBodyPart(){
@@ -22,4 +24,33 @@ Point BodyPart::getCenter(){
 
 void BodyPart::setCenter(Point p){
     center_=p;
+}
+
+
+void BodyPart::Display(){
+
+    int R_,V_,B_;
+    R_=0;
+    V_=100;
+    B_=100;
+    glPushMatrix();
+    glTranslated(center_.x,center_.y,0);
+
+
+    // Couleur de l'objet
+
+    GLfloat colorAmbiante[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
+    GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
+    //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, colorAmbiante);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, colorDiffuse);
+    //glMaterialfv(GL_FRONT, GL_SPECULAR, colorSpeculaire_planet);
+
+
+    // Affichage de la quadrique
+    gluSphere(ball_quadric_, radius_, 50.0, 50.0);
+
+
+    glPopMatrix();
 }

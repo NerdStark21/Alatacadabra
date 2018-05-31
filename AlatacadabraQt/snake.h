@@ -20,14 +20,10 @@ private:
     Point bottomRight_;
 
 public:
-<<<<<<< HEAD
     Snake();
-=======
-    Snake(){}
->>>>>>> some shit
     Snake(int width, int heigth);
     void drawNode();
-
+    void Display();
     void move();
     bool deadlyPlace();
     void eatFruit();

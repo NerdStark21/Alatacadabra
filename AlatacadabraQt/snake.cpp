@@ -25,6 +25,12 @@ Snake::Snake(int width, int heigth)
 
 }
 
+void Snake::Display(){
+    for(BodyPart b : body_){
+        b.Display();
+    }
+}
+
 
 void Snake::move(){
     if(!deadlyPlace()){
