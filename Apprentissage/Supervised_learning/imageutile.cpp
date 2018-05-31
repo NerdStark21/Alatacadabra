@@ -19,3 +19,7 @@ vector<float> ImageUtile::RGBtoYCbCR(vector<float> pixel)
  return pixel_YCbCr;
 
 }
+
+Mat ImageUtile::MatToYCbCr(Mat M){
+
+}

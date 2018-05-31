@@ -48,8 +48,6 @@ int Direction::getDirection(){
 
 
 
-
-
     return direction_;
 }
 

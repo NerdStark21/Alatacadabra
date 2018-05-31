@@ -6,12 +6,12 @@
 #include "background.h"
 #include "skin.h"
 
-#include "direction.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
+#include "imageutile.h"
 
 #include <cstdio>
 #include <iostream>
@@ -19,7 +19,6 @@
 using namespace cv;
 using namespace std;
 
-using namespace std;
 
 class Direction
 {
