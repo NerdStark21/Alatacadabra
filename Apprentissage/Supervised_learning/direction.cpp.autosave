@@ -46,10 +46,6 @@ int Direction::getDirection(){
     //Effet mirroir
     cv::flip(frame, frame, 1);
 
-
-
-
-
     return direction_;
 }
 
