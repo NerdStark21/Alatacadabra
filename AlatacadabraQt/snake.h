@@ -27,8 +27,8 @@ public:
     void move();
     bool deadlyPlace();
     void eatFruit();
-    void setDirection(Point p);
-    Vector<BodyPart> getBody();
+    void setDirection(Point p){direction_ = p;}
+    Vector<BodyPart> getBody(){return body_;}
 };
 
 #endif // SNAKE_H
