@@ -14,7 +14,7 @@ private:
 
 
     int radius_;
-
+    bool dead_;
 
     Point topLeft_;
     Point bottomRight_;

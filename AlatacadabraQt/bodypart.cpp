@@ -1,5 +1,8 @@
 #include "bodypart.h"
 
+#include <QDebug>
+#include <qdebug.h>
+
 //BodyPart::BodyPart(Point center, int radius)
 //    : center_(center), radius_(radius){}
 
@@ -10,6 +13,9 @@ BodyPart::BodyPart(Point center, int radius){
 }
 
 void BodyPart::Display(){
+
+    qDebug()<<"Display de BodyPart"<<endl;
+
 
     int R_,V_,B_;
     R_=0;

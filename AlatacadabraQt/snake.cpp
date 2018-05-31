@@ -32,6 +32,9 @@ void Snake::move(){
     if(!deadlyPlace()){
         body_.back().setCenter(body_.front().getCenter()+direction_);
     }
+    else{
+        dead_=true;
+    }
 }
 
 // Add a body part at the end of the snake.

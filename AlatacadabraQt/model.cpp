@@ -35,17 +35,46 @@ Model::Model()
     snake_=Snake(width_,heigth_);
 }
 
+
+void Model::update(){
+    snake_.move();
+    fruitEaten();
+}
+
+void Model::fruitEaten(){
+    for(Fruit f : fruits_){
+        if( f.getPosition()== snake_.getBody().begin()->getCenter()){
+            snake_.eatFruit();
+            f.~Fruit();
+        }
+    }
+}
+
+void Model::Display(){
+    drawWalls();
+    drawSnake();
+}
+
 void Model::drawWalls(){
     vector<Wall>::iterator itw;
     for (itw = walls_.begin(); itw != walls_.end(); itw++)
         itw->drawWall();
 }
 
+void Model::drawFruits(){
+    for(Fruit f:fruits_){
+        f.drawFruit();
+    }
+}
+
+void Model::drawSnake(){
+    snake_.Display();
+}
+
+
 
 /*
  * Create a fruit on a random free space
- *
- *
  */
 
 void Model::createFruit(){
@@ -63,6 +92,7 @@ void Model::createFruit(){
             }
         }
 
+
         // Check if there is already a bodypart there
         for(BodyPart part:snake_.getBody()){
             if(part.getCenter()==cherry.getPosition()){
@@ -76,8 +106,6 @@ void Model::createFruit(){
 
     fruits_.push_back(cherry);
 }
-
-
 
 
 

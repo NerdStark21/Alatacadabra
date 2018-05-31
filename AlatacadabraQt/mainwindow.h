@@ -14,6 +14,7 @@ public:
     //explicit MainWindow(QWidget *parent = 0);
     MainWindow(QWidget * parent = nullptr);
     ~MainWindow();
+    void update();
 
 protected:
     // Fonction d'initialisation
@@ -37,6 +38,7 @@ private:
 private:
     Ui::MainWindow *ui;
     */
+
 };
 
 #endif // MAINWINDOW_H

@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //setFixedSize(WIN_WIDTH, WIN_HEIGHT);
     move(QApplication::desktop()->screen()->rect().center() - rect().center());
 
-    /*
+
     // Connexion du timer
     connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
         m_TimeElapsed += 1.0f / 12.0f;
@@ -34,15 +34,22 @@ MainWindow::MainWindow(QWidget *parent) :
 
     m_AnimationTimer.setInterval(10);
     m_AnimationTimer.start();
-    */
+
+
     qDebug()<<"On a set le timer"<<endl;
+
+    // Création du modèle
     model_ = new Model();
+    // Création de la classe de détection
     detection_ = new Detection();
 }
 
+void MainWindow::update(){
+    model_->update();
+}
 
-MainWindow::~MainWindow()
-{
+
+MainWindow::~MainWindow(){
 }
 
 
@@ -97,4 +104,5 @@ void MainWindow::paintGL()
 
     // On va dessiner tous les murs
     model_->drawWalls();
+    model_->Display();
 }

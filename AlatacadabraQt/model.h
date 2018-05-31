@@ -27,10 +27,16 @@ private:
 
 public:
     Model();
+
     void drawWalls();
     void drawGrid();
-    void updateGame();
+    void drawSnake();
+    void drawFruits();
+    void Display();
+
     void createFruit();
+    void update();
+    void fruitEaten();
 };
 
 #endif // MODEL_H
