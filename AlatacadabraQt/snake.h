@@ -20,7 +20,7 @@ private:
     Point bottomRight_;
 
 public:
-    Snake();
+    Snake(){}
     Snake(int width, int heigth);
     void drawNode();
     void Display();

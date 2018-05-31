@@ -4,6 +4,7 @@
 #include "opencv2/core/version.hpp"
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
+#include <GL/glu.h>
 
 using namespace cv;
 
@@ -11,13 +12,17 @@ using namespace cv;
 class Fruit
 {
 public:
-    Fruit();
-    Fruit(Point position);
-    void setPosition(Point p);
-    Point getPosition();
+    Fruit(){}
+    Fruit(Point position){position_ = position;}
+    ~Fruit(){gluDeleteQuadric(quadrique_);}
+    void setPosition(Point p){position_ = p;}
+    Point getPosition(){return position_;}
+    void drawFruit();
 
 private:
     Point position_;
+    int radius_ = 1;
+    GLUquadric* quadrique_;
 };
 
 #endif // FRUIT_H

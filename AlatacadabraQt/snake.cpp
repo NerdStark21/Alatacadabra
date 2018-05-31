@@ -6,10 +6,6 @@
 
 using namespace cv;
 
-Snake::Snake(){
-
-}
-
 
 Snake::Snake(int width, int heigth)
 {

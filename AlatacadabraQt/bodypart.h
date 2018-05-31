@@ -17,14 +17,11 @@ private:
     GLUquadric *ball_quadric_;
 
 public:
-    BodyPart();
     BodyPart(Point center, int radius);
-    void drawBodyPart();
+    BodyPart(){}
     void Display();
-
-
-    Point getCenter();
-    void setCenter(Point p);
+    Point getCenter(){return center_;}
+    void setCenter(Point p){center_ = p;}
 };
 
 

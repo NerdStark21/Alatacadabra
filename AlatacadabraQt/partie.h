@@ -14,6 +14,7 @@ class Partie : public QGLWidget
 {
 public:
     Partie(QWidget*parent);
+    int getScore(){return score_;}
     void initializeGL();
     void updateGame();
 private:
