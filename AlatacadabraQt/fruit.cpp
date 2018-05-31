@@ -1,21 +1,7 @@
 #include "fruit.h"
 
-Fruit::Fruit()
-{
-
-}
-
-
-Fruit::Fruit(Point position)
-{
-    position_=position;
-}
-
-
-void Fruit::setPosition(Point p){
-    position_=p;
-}
-
-Point Fruit::getPosition(){
-    return position_;
+void Fruit::drawFruit(){
+    quadrique_ = gluNewQuadric(); //On créé l'objet
+    // Affichage de la quadrique
+    gluSphere(quadrique_, radius_, 100, 100); //On dessine la quadrique
 }

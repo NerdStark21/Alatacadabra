@@ -22,6 +22,15 @@ class ImageUtile
 {
 public:
     ImageUtile();
+
+    /**
+     * @brief RGBtoYCbCR
+     *  Cette fonction passe un pixel de l'espace RGB à l'espace YCbCr.
+     * @param pixel
+     *  vecteur de 3 float entre 0 et 1 correspondant aux coordonnées RGB d'un pixel
+     * @return
+     *  vecteur de 3 float entre 0 et 1 correspondant aux coordonnées YCbCr d'un pixel
+     */
     static vector<float> RGBtoYCbCR(vector<float> pixel);
 
     /**

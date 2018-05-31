@@ -1,7 +1,7 @@
 #include "direction.h"
 
 
-Direction::Direction()
+Traitement::Traitement()
 {
     int frameWidth = 320;
     int frameHeight = 240;
@@ -23,7 +23,7 @@ Direction::Direction()
 
 }
 
-void Direction::setDirection(int direction){
+void Traitement::setDirection(int direction){
     direction_ = direction;
 }
 
@@ -36,7 +36,7 @@ void Direction::setDirection(int direction){
  * @return direction_
  */
 
-int Direction::getDirection(){
+int Traitement::getDirection(){
 
     Mat frame; //Image courante
 
@@ -51,7 +51,7 @@ int Direction::getDirection(){
     return direction_;
 }
 
-Direction::~Direction()
+Traitement::~Traitement()
 {
    webCam_.release();
 }
