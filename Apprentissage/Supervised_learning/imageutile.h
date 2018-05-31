@@ -13,6 +13,10 @@
 using namespace cv;
 using namespace std;
 
+/**
+ * @brief The ImageUtile class
+ * Cette classe permettra de transformer une image RGB en une image YCbCr
+ */
 
 class ImageUtile
 {

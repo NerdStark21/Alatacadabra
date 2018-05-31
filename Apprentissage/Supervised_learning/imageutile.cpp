@@ -21,5 +21,7 @@ vector<float> ImageUtile::RGBtoYCbCR(vector<float> pixel)
 }
 
 Mat ImageUtile::MatToYCbCr(Mat M){
+    Mat YcbCr;
+    int n = M.size();
 
 }

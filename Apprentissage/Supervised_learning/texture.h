@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/**
+ * @brief The Texture class
+ * Classe contenant les différentes probabiltés nécessaires au calcul à la classification bayésienne. Deux classes hériteront de celle-ci:
+ * Skin et Background.
+ */
+
 class Texture
 {
 
