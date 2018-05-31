@@ -7,6 +7,11 @@
 
 using namespace std;
 
+/**
+ * @brief The bayesien class
+ * Cette classe permet de réaliser une classification bayésienne afin de distinguer la main du fond
+ */
+
 class bayesien
 {
 public:

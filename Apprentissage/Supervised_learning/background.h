@@ -4,6 +4,11 @@
 #include "texture.h"
 using namespace std;
 
+/**
+ * @brief The Background class
+ * Cette classe représentera la classe du fond. Elle hérite de la classe texture.h
+ */
+
 class Background : public Texture
 {
 public:

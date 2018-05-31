@@ -34,8 +34,8 @@ SOURCES += \
     bayesien.cpp \
     background.cpp \
     texture.cpp \
-    direction.cpp \
-    imageutile.cpp
+    imageutile.cpp \
+    traitement.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +44,8 @@ HEADERS += \
     background.h \
     texture.h \
     direction.h \
-    imageutile.h
+    imageutile.h \
+    traitement.h
 
 FORMS += \
         mainwindow.ui

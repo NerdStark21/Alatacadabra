@@ -52,11 +52,3 @@ bool Snake::deadlyPlace(){
     };
     return true;
 }
-
-void Snake::setDirection(Point p){
-    direction_=p;
-}
-
-Vector<BodyPart> Snake::getBody(){
-    return body_;
-}
