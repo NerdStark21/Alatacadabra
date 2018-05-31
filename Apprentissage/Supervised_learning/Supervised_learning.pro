@@ -43,7 +43,6 @@ HEADERS += \
     bayesien.h \
     background.h \
     texture.h \
-    direction.h \
     imageutile.h \
     traitement.h
 

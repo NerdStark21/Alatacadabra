@@ -1,5 +1,10 @@
 #include "imageutile.h"
 
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 ImageUtile::ImageUtile()
 {
 
@@ -22,6 +27,15 @@ vector<float> ImageUtile::RGBtoYCbCR(vector<float> pixel)
 
 Mat ImageUtile::MatToYCbCr(Mat M){
     Mat YcbCr;
-    int n = M.size();
+   /*//Transformation de la matrice en YCbCr
+    MatIterator_ it;
+    Point p = Point(0,0);
+    cout<<M.at(&p)<<endl;
+    /*for(it = M.begin(); it != M.end(); it++){
+
+
+    }*/
+    return M;
+
 
 }
