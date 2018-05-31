@@ -6,7 +6,6 @@
 #include "background.h"
 #include "skin.h"
 
-#include "direction.h"
 #include "mainwindow.h"
 #include <QApplication>
 #include "opencv2/video/tracking.hpp"

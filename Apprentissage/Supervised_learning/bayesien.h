@@ -16,8 +16,24 @@ class bayesien
 {
 public:
     bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> muBack, vector<float> sigmaBack);
-    void probab_posteriori();
+
+    /**
+     * @brief probab_posteriori
+     *  Calcule la probabilité a posteriori et met à jour les attributs
+     */
+    void proba_posteriori();
+
+    /**
+     * @brief proba_totale
+     *  Calcule la probabilité totatle et met à jour les attributs
+     */
     void proba_totale();
+
+    /**
+     * @brief regle_bayesienne
+     * @param pixel
+     * @return
+     */
     bool regle_bayesienne(vector<float> pixel);
     vector<float> getProbaTotale();
 

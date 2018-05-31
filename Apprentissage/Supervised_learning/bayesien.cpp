@@ -6,8 +6,7 @@ bayesien::bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> 
     background_ = new Background(muBack, sigmaBack);
 }
 
-void bayesien::probab_posteriori()
-
+void bayesien::proba_posteriori()
 {
 
 //Pour la peau
@@ -42,7 +41,7 @@ bool bayesien::regle_bayesienne(vector<float> pixel)
     skin_->vraisemblance(pixel);
     background_->vraisemblance(pixel);
     proba_totale();
-    probab_posteriori();
+    proba_posteriori();
     if(skin_->getPosteriori()>background_->getPosteriori())
     {
         return true;
