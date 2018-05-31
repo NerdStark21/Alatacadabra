@@ -48,19 +48,21 @@ OBJECTS_DIR   = debug
 SOURCES       = ..\AlatacadabraQt\main.cpp \
 		..\AlatacadabraQt\mainwindow.cpp \
 		..\AlatacadabraQt\partie.cpp \
-		..\AlatacadabraQt\bodypart.cpp \
 		..\AlatacadabraQt\snake.cpp \
 		..\AlatacadabraQt\wall.cpp \
 		..\AlatacadabraQt\model.cpp \
-		..\AlatacadabraQt\detection.cpp debug\moc_mainwindow.cpp
+		..\AlatacadabraQt\detection.cpp \
+		..\AlatacadabraQt\bodypart.cpp \
+		..\AlatacadabraQt\fruit.cpp debug\moc_mainwindow.cpp
 OBJECTS       = debug/main.o \
 		debug/mainwindow.o \
 		debug/partie.o \
-		debug/bodypart.o \
 		debug/snake.o \
 		debug/wall.o \
 		debug/model.o \
 		debug/detection.o \
+		debug/bodypart.o \
+		debug/fruit.o \
 		debug/moc_mainwindow.o
 
 DIST          =  ..\AlatacadabraQt\mainwindow.h \
@@ -68,15 +70,17 @@ DIST          =  ..\AlatacadabraQt\mainwindow.h \
 		..\AlatacadabraQt\model.h \
 		..\AlatacadabraQt\wall.h \
 		..\AlatacadabraQt\snake.h \
+		..\AlatacadabraQt\detection.h \
 		..\AlatacadabraQt\bodypart.h \
-		..\AlatacadabraQt\detection.h ..\AlatacadabraQt\main.cpp \
+		..\AlatacadabraQt\fruit.h ..\AlatacadabraQt\main.cpp \
 		..\AlatacadabraQt\mainwindow.cpp \
 		..\AlatacadabraQt\partie.cpp \
-		..\AlatacadabraQt\bodypart.cpp \
 		..\AlatacadabraQt\snake.cpp \
 		..\AlatacadabraQt\wall.cpp \
 		..\AlatacadabraQt\model.cpp \
-		..\AlatacadabraQt\detection.cpp
+		..\AlatacadabraQt\detection.cpp \
+		..\AlatacadabraQt\bodypart.cpp \
+		..\AlatacadabraQt\fruit.cpp
 QMAKE_TARGET  = AlatacadabraQt
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = AlatacadabraQt.exe
@@ -88,7 +92,7 @@ first: all
 all: Makefile.Debug  $(DESTDIR_TARGET)
 
 $(DESTDIR_TARGET): ui_mainwindow.h $(OBJECTS) 
-	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
+	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) object_script.AlatacadabraQt.Debug  $(LIBS)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\AlatacadabraQt\AlatacadabraQt.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -96,10 +100,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) AlatacadabraQt.zip $(SOURCES) $(DIST) ..\AlatacadabraQt\AlatacadabraQt.pro D:\Qt\5.10.0\mingw53_32\mkspecs\features\spec_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\qdevice.pri D:\Qt\5.10.0\mingw53_32\mkspecs\features\device_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\common\g++-base.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\angle.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\windows-vulkan.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\sanitize.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\gcc-base.conf D:\Qt\5.10.0\mingw53_32\mkspecs\qconfig.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3drender.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axbase.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axserver.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_core.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_core_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_dbus.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designer.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_edid_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gui.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_help.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_help_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_location.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_location_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_network.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_network_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_nfc.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_opengl.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_positioning.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quick.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_scxml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sensors.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialport.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sql.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_svg.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_testlib.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uitools.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_websockets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_widgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_winextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt_functions.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\win32-g++\qmake.conf D:\Qt\5.10.0\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash D:\Qt\5.10.0\mingw53_32\mkspecs\features\exclusive_builds.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\toolchain.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\default_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\default_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\resolve_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\exclusive_builds_post.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\default_post.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\build_pass.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qml_debug.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\precompile_header.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\warn_on.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\resources.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\moc.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\opengl.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\uic.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qmake_use.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\file_copies.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\windows.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\testcase_targets.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\exceptions.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\yacc.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\lex.prf ..\AlatacadabraQt\AlatacadabraQt.pro D:\Qt\5.10.0\mingw53_32\lib\qtmaind.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5OpenGLd.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Widgetsd.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Guid.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Cored.prl    D:\Qt\5.10.0\mingw53_32\mkspecs\features\data\dummy.cpp ..\AlatacadabraQt\mainwindow.h ..\AlatacadabraQt\partie.h ..\AlatacadabraQt\model.h ..\AlatacadabraQt\wall.h ..\AlatacadabraQt\snake.h ..\AlatacadabraQt\bodypart.h ..\AlatacadabraQt\detection.h  ..\AlatacadabraQt\main.cpp ..\AlatacadabraQt\mainwindow.cpp ..\AlatacadabraQt\partie.cpp ..\AlatacadabraQt\bodypart.cpp ..\AlatacadabraQt\snake.cpp ..\AlatacadabraQt\wall.cpp ..\AlatacadabraQt\model.cpp ..\AlatacadabraQt\detection.cpp ..\AlatacadabraQt\mainwindow.ui    
+	$(ZIP) AlatacadabraQt.zip $(SOURCES) $(DIST) ..\AlatacadabraQt\AlatacadabraQt.pro D:\Qt\5.10.0\mingw53_32\mkspecs\features\spec_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\qdevice.pri D:\Qt\5.10.0\mingw53_32\mkspecs\features\device_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\common\g++-base.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\angle.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\windows-vulkan.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\sanitize.conf D:\Qt\5.10.0\mingw53_32\mkspecs\common\gcc-base.conf D:\Qt\5.10.0\mingw53_32\mkspecs\qconfig.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3drender.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axbase.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axserver.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_core.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_core_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_dbus.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designer.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_edid_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gui.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_help.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_help_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_location.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_location_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_network.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_network_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_nfc.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_opengl.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_positioning.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quick.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_scxml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sensors.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialport.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sql.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_svg.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_testlib.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uitools.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_websockets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_widgets.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_winextras.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xml.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri D:\Qt\5.10.0\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt_functions.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\win32-g++\qmake.conf D:\Qt\5.10.0\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash D:\Qt\5.10.0\mingw53_32\mkspecs\features\exclusive_builds.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\toolchain.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\default_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\default_pre.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\resolve_config.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\exclusive_builds_post.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\default_post.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\build_pass.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qml_debug.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\precompile_header.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\warn_on.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qt.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\resources.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\moc.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\opengl.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\uic.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\qmake_use.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\file_copies.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\win32\windows.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\testcase_targets.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\exceptions.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\yacc.prf D:\Qt\5.10.0\mingw53_32\mkspecs\features\lex.prf ..\AlatacadabraQt\AlatacadabraQt.pro D:\Qt\5.10.0\mingw53_32\lib\qtmaind.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5OpenGLd.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Widgetsd.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Guid.prl D:\Qt\5.10.0\mingw53_32\lib\Qt5Cored.prl    D:\Qt\5.10.0\mingw53_32\mkspecs\features\data\dummy.cpp ..\AlatacadabraQt\mainwindow.h ..\AlatacadabraQt\partie.h ..\AlatacadabraQt\model.h ..\AlatacadabraQt\wall.h ..\AlatacadabraQt\snake.h ..\AlatacadabraQt\detection.h ..\AlatacadabraQt\bodypart.h ..\AlatacadabraQt\fruit.h  ..\AlatacadabraQt\main.cpp ..\AlatacadabraQt\mainwindow.cpp ..\AlatacadabraQt\partie.cpp ..\AlatacadabraQt\snake.cpp ..\AlatacadabraQt\wall.cpp ..\AlatacadabraQt\model.cpp ..\AlatacadabraQt\detection.cpp ..\AlatacadabraQt\bodypart.cpp ..\AlatacadabraQt\fruit.cpp ..\AlatacadabraQt\mainwindow.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.o debug\mainwindow.o debug\partie.o debug\bodypart.o debug\snake.o debug\wall.o debug\model.o debug\detection.o debug\moc_mainwindow.o
+	-$(DEL_FILE) debug\main.o debug\mainwindow.o debug\partie.o debug\snake.o debug\wall.o debug\model.o debug\detection.o debug\bodypart.o debug\fruit.o debug\moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -233,37 +237,7 @@ debug/moc_mainwindow.cpp: D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMainWindow 
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qicon.h \
-		../AlatacadabraQt/partie.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
-		ui_mainwindow.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QVariant \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QAction \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qaction.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QApplication \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -271,36 +245,8 @@ debug/moc_mainwindow.cpp: D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMainWindow 
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QHeaderView \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qframe.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qvalidator.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qregularexpression.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyle.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMenuBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenu.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QStatusBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstatusbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QToolBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QDesktopWidget \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/QDebug \
-		../AlatacadabraQt/snake.h \
 		../AlatacadabraQt/wall.h \
 		C:/opencv/build/install/include/opencv2/opencv.hpp \
 		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
@@ -331,6 +277,35 @@ debug/moc_mainwindow.cpp: D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMainWindow 
 		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp \
+		../AlatacadabraQt/partie.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
+		../AlatacadabraQt/fruit.h \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/bodypart.h \
 		../AlatacadabraQt/detection.h \
 		../AlatacadabraQt/mainwindow.h \
 		debug/moc_predefs.h \
@@ -595,37 +570,7 @@ debug/main.o: ../AlatacadabraQt/main.cpp ../AlatacadabraQt/mainwindow.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qicon.h \
-		../AlatacadabraQt/partie.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
-		ui_mainwindow.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QVariant \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QAction \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qaction.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QApplication \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -633,36 +578,8 @@ debug/main.o: ../AlatacadabraQt/main.cpp ../AlatacadabraQt/mainwindow.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QHeaderView \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qframe.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qvalidator.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qregularexpression.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyle.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMenuBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenu.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QStatusBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstatusbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QToolBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QDesktopWidget \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/QDebug \
-		../AlatacadabraQt/snake.h \
 		../AlatacadabraQt/wall.h \
 		C:/opencv/build/install/include/opencv2/opencv.hpp \
 		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
@@ -693,6 +610,35 @@ debug/main.o: ../AlatacadabraQt/main.cpp ../AlatacadabraQt/mainwindow.h \
 		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp \
+		../AlatacadabraQt/partie.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
+		../AlatacadabraQt/fruit.h \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/bodypart.h \
 		../AlatacadabraQt/detection.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\AlatacadabraQt\main.cpp
 
@@ -803,37 +749,7 @@ debug/mainwindow.o: ../AlatacadabraQt/mainwindow.cpp ../AlatacadabraQt/mainwindo
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtouchdevice.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qicon.h \
-		../AlatacadabraQt/partie.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
-		ui_mainwindow.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QVariant \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QAction \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qaction.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QApplication \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -841,36 +757,8 @@ debug/mainwindow.o: ../AlatacadabraQt/mainwindow.cpp ../AlatacadabraQt/mainwindo
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qinputmethod.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QButtonGroup \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QHeaderView \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qheaderview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qframe.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyleoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qvalidator.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qregularexpression.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyle.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMenuBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenubar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenu.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QStatusBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstatusbar.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QToolBar \
-		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtoolbar.h \
-		../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QDesktopWidget \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/QDebug \
-		../AlatacadabraQt/snake.h \
 		../AlatacadabraQt/wall.h \
 		C:/opencv/build/install/include/opencv2/opencv.hpp \
 		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
@@ -901,6 +789,35 @@ debug/mainwindow.o: ../AlatacadabraQt/mainwindow.cpp ../AlatacadabraQt/mainwindo
 		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp \
+		../AlatacadabraQt/partie.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
+		../AlatacadabraQt/fruit.h \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/bodypart.h \
 		../AlatacadabraQt/detection.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\AlatacadabraQt\mainwindow.cpp
 
@@ -1034,7 +951,8 @@ debug/partie.o: ../AlatacadabraQt/partie.cpp ../AlatacadabraQt/partie.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\partie.o ..\AlatacadabraQt\partie.cpp
 
-debug/bodypart.o: ../AlatacadabraQt/bodypart.cpp ../AlatacadabraQt/bodypart.h \
+debug/snake.o: ../AlatacadabraQt/snake.cpp ../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/bodypart.h \
 		C:/opencv/build/install/include/opencv2/opencv.hpp \
 		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
 		C:/opencv/build/install/include/opencv2/core/core_c.h \
@@ -1064,9 +982,6 @@ debug/bodypart.o: ../AlatacadabraQt/bodypart.cpp ../AlatacadabraQt/bodypart.h \
 		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
 		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\bodypart.o ..\AlatacadabraQt\bodypart.cpp
-
-debug/snake.o: ../AlatacadabraQt/snake.cpp ../AlatacadabraQt/snake.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\snake.o ..\AlatacadabraQt\snake.cpp
 
 debug/wall.o: ../AlatacadabraQt/wall.cpp ../AlatacadabraQt/wall.h \
@@ -1212,30 +1127,7 @@ debug/model.o: ../AlatacadabraQt/model.cpp ../AlatacadabraQt/model.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qguiapplication.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/qinputmethod.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QDesktopWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtCore/QDebug \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
-		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
-		../AlatacadabraQt/snake.h \
 		../AlatacadabraQt/wall.h \
 		C:/opencv/build/install/include/opencv2/opencv.hpp \
 		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
@@ -1268,12 +1160,101 @@ debug/model.o: ../AlatacadabraQt/model.cpp ../AlatacadabraQt/model.h \
 		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp \
 		../AlatacadabraQt/partie.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/QGLWidget \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qgl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengl.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qt_windows.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES3/gl3platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/KHR/khrplatform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtANGLE/GLES2/gl2platform.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopengles2ext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qopenglext.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpaintengine.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpainter.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qtextoption.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qpen.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qglcolormap.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtOpenGL/qtopenglglobal.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QSurfaceFormat \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/qsurfaceformat.h \
 		D:/Qt/5.10.0/mingw53_32/include/QtGui/QMouseEvent \
-		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/QTimer \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qtimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtCore/qbasictimer.h \
+		D:/Qt/5.10.0/mingw53_32/include/QtGui/QColor \
+		../AlatacadabraQt/fruit.h \
+		../AlatacadabraQt/snake.h \
+		../AlatacadabraQt/bodypart.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\model.o ..\AlatacadabraQt\model.cpp
 
 debug/detection.o: ../AlatacadabraQt/detection.cpp ../AlatacadabraQt/detection.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\detection.o ..\AlatacadabraQt\detection.cpp
+
+debug/bodypart.o: ../AlatacadabraQt/bodypart.cpp ../AlatacadabraQt/bodypart.h \
+		C:/opencv/build/install/include/opencv2/opencv.hpp \
+		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
+		C:/opencv/build/install/include/opencv2/core/core_c.h \
+		C:/opencv/build/install/include/opencv2/core/types_c.h \
+		C:/opencv/build/install/include/opencv2/core/core.hpp \
+		C:/opencv/build/install/include/opencv2/core/version.hpp \
+		C:/opencv/build/install/include/opencv2/core/operations.hpp \
+		C:/opencv/build/install/include/opencv2/core/mat.hpp \
+		C:/opencv/build/install/include/opencv2/flann/miniflann.hpp \
+		C:/opencv/build/install/include/opencv2/flann/defines.h \
+		C:/opencv/build/install/include/opencv2/flann/config.h \
+		C:/opencv/build/install/include/opencv2/imgproc/imgproc_c.h \
+		C:/opencv/build/install/include/opencv2/imgproc/types_c.h \
+		C:/opencv/build/install/include/opencv2/imgproc/imgproc.hpp \
+		C:/opencv/build/install/include/opencv2/photo/photo.hpp \
+		C:/opencv/build/install/include/opencv2/photo/photo_c.h \
+		C:/opencv/build/install/include/opencv2/video/video.hpp \
+		C:/opencv/build/install/include/opencv2/video/tracking.hpp \
+		C:/opencv/build/install/include/opencv2/video/background_segm.hpp \
+		C:/opencv/build/install/include/opencv2/features2d/features2d.hpp \
+		C:/opencv/build/install/include/opencv2/objdetect/objdetect.hpp \
+		C:/opencv/build/install/include/opencv2/calib3d/calib3d.hpp \
+		C:/opencv/build/install/include/opencv2/core/affine.hpp \
+		C:/opencv/build/install/include/opencv2/ml/ml.hpp \
+		C:/opencv/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/opencv/build/install/include/opencv2/highgui/highgui.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\bodypart.o ..\AlatacadabraQt\bodypart.cpp
+
+debug/fruit.o: ../AlatacadabraQt/fruit.cpp ../AlatacadabraQt/fruit.h \
+		C:/opencv/build/install/include/opencv2/opencv.hpp \
+		C:/opencv/build/install/include/opencv2/opencv_modules.hpp \
+		C:/opencv/build/install/include/opencv2/core/core_c.h \
+		C:/opencv/build/install/include/opencv2/core/types_c.h \
+		C:/opencv/build/install/include/opencv2/core/core.hpp \
+		C:/opencv/build/install/include/opencv2/core/version.hpp \
+		C:/opencv/build/install/include/opencv2/core/operations.hpp \
+		C:/opencv/build/install/include/opencv2/core/mat.hpp \
+		C:/opencv/build/install/include/opencv2/flann/miniflann.hpp \
+		C:/opencv/build/install/include/opencv2/flann/defines.h \
+		C:/opencv/build/install/include/opencv2/flann/config.h \
+		C:/opencv/build/install/include/opencv2/imgproc/imgproc_c.h \
+		C:/opencv/build/install/include/opencv2/imgproc/types_c.h \
+		C:/opencv/build/install/include/opencv2/imgproc/imgproc.hpp \
+		C:/opencv/build/install/include/opencv2/photo/photo.hpp \
+		C:/opencv/build/install/include/opencv2/photo/photo_c.h \
+		C:/opencv/build/install/include/opencv2/video/video.hpp \
+		C:/opencv/build/install/include/opencv2/video/tracking.hpp \
+		C:/opencv/build/install/include/opencv2/video/background_segm.hpp \
+		C:/opencv/build/install/include/opencv2/features2d/features2d.hpp \
+		C:/opencv/build/install/include/opencv2/objdetect/objdetect.hpp \
+		C:/opencv/build/install/include/opencv2/calib3d/calib3d.hpp \
+		C:/opencv/build/install/include/opencv2/core/affine.hpp \
+		C:/opencv/build/install/include/opencv2/ml/ml.hpp \
+		C:/opencv/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/opencv/build/install/include/opencv2/highgui/highgui.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/contrib.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/retina.hpp \
+		C:/opencv/build/install/include/opencv2/contrib/openfabmap.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\fruit.o ..\AlatacadabraQt\fruit.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_mainwindow.o debug\moc_mainwindow.cpp

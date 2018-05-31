@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "partie.h"
-#include "ui_mainwindow.h"
+//#include "ui_mainwindow.h"
 #include "model.h"
 #include "detection.h"
 

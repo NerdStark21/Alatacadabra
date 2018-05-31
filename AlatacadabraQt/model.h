@@ -3,17 +3,13 @@
 
 #include <QApplication>
 #include <QDesktopWidget>
-#include <QtOpenGL/QGLWidget>
+//#include <QtOpenGL/QGLWidget>
 #include <QDebug>
-#include <QTimer>
 #include <qdebug.h>
 #include "wall.h"
 #include "partie.h"
 #include "fruit.h"
 #include "snake.h"
-
-#include <opencv2/opencv.hpp>
-#include <opencv2/core/core.hpp>
 
 using namespace cv;
 

@@ -1,6 +1,7 @@
 #ifndef FRUIT_H
 #define FRUIT_H
 
+#include "opencv2/core/version.hpp"
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 
