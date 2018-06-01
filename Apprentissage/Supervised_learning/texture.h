@@ -20,7 +20,7 @@ public:
 
     //Calcul des probabiltés
 
-    vector<float> probab_priori(float proba);
+    void probab_priori(float proba);
     vector<float> vraisemblance(vector<float> x);
 
     //Setters

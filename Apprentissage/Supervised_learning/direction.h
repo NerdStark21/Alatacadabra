@@ -11,6 +11,7 @@
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
+#include "imageutile.h"
 
 #include <cstdio>
 #include <iostream>
@@ -18,25 +19,14 @@
 using namespace cv;
 using namespace std;
 
-using namespace std;
 
-class Traitement
+class Direction
 {
 public:
-    Traitement();
-    ~Traitement();
+    Direction();
+    ~Direction();
     void setDirection(int direction);
     int getDirection();
-    /**
-     * @brief Segmentation
-     * @param baye
-     * Attribut bayésien permettant de calculer des probabilités
-     * @param frame
-     * Image à traiter
-     * @return
-     * Image segmentée en noir et blanc
-     */
-    Mat Segmentation(bayesien * baye, Mat frameYCbCr);
 
 
 private:

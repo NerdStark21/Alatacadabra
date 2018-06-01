@@ -15,7 +15,8 @@ using namespace std;
 class bayesien
 {
 public:
-    bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> muBack, vector<float> sigmaBack);
+
+    bayesien();
 
     /**
      * @brief probab_posteriori
@@ -36,7 +37,8 @@ public:
      */
     bool regle_bayesienne(vector<float> pixel);
     vector<float> getProbaTotale();
-
+    vector<float> * getSkin();
+    vector<float> * getBack();
 private:
 
     Background * background_;

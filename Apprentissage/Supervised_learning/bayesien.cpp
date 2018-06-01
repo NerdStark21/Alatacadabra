@@ -1,7 +1,36 @@
 #include "bayesien.h"
 
-bayesien::bayesien(vector<float> muSkin, vector<float> sigmaSkin, vector<float> muBack, vector<float> sigmaBack)
+
+bayesien::bayesien()
 {
+    //Moyenne de la classe peau
+    vector<float> muSkin;
+
+    //Écart-type de la classe peau
+    vector<float> sigmaSkin;
+
+    //Moyenne de la classe fond
+    vector<float> muBack;
+
+    //Écart-type de la classe fond
+    vector<float> sigmaBack;
+
+    muBack.push_back(96.25);
+    muBack.push_back(120.56);
+    muBack.push_back(137.53);
+
+    sigmaBack.push_back(60.94);
+    sigmaBack.push_back(8.94);
+    sigmaBack.push_back(13.15);
+
+    muSkin.push_back(1);
+    muSkin.push_back(1);
+    muSkin.push_back(1);
+
+    sigmaSkin.push_back(1);
+    sigmaSkin.push_back(1);
+    sigmaSkin.push_back(1);
+
     skin_ = new Skin(muSkin,sigmaSkin);
     background_ = new Background(muBack, sigmaBack);
 }
@@ -38,6 +67,8 @@ vector<float> bayesien::getProbaTotale(){
 
 bool bayesien::regle_bayesienne(vector<float> pixel)
 {
+    skin_->probab_priori(1/5);
+    background_->probab_priori(4/5);
     skin_->vraisemblance(pixel);
     background_->vraisemblance(pixel);
     proba_totale();
@@ -48,3 +79,4 @@ bool bayesien::regle_bayesienne(vector<float> pixel)
     }
     return false;
 }
+

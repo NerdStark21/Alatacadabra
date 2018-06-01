@@ -14,7 +14,7 @@ Texture::Texture(vector<float> mu, vector<float> sigma)
 
 //Calcul des probabiltés
 
-vector<float> Texture::probab_priori(float proba)
+void Texture::probab_priori(float proba)
 {
     p_w_ = proba;
 }
