@@ -1,6 +1,7 @@
 #include "texture.h"
 
 #include <vector>
+#include <iostream>
 #include <math.h>
 
 using namespace std;
@@ -18,14 +19,22 @@ void Texture::probab_priori(float proba)
 {
     p_w_ = proba;
 }
-vector<float> Texture::vraisemblance(vector<float> x)
+void Texture::vraisemblance(vector<float> pixel)
 {
- // Y
- p_x_w_.at(1) = 1/sqrt(2*pow(sigma_.at(1),2) * M_PI) * exp(-0.5 * (pow((x.at(1) - mu_.at(1))/sigma_.at(1),2)));
- // Cb
- p_x_w_.at(2) = 1/sqrt(2*pow(sigma_.at(2),2) * M_PI) * exp(-0.5 * (pow((x.at(2) - mu_.at(2))/sigma_.at(2),2)));
- //Cr
- p_x_w_.at(3) = 1/sqrt(2*pow(sigma_.at(3),2) * M_PI) * exp(-0.5 * (pow((x.at(3) - mu_.at(3))/sigma_.at(3),2)));
+
+    // Y
+    float Y = 1/sqrt(2*pow(sigma_.at(0),2) * M_PI) * exp(-0.5 * (pow((pixel.at(0) - mu_.at(0))/sigma_.at(0),2)));
+
+    // Cb
+    float Cb = 1/sqrt(2*pow(sigma_.at(1),2) * M_PI) * exp(-0.5 * (pow((pixel.at(1) - mu_.at(1))/sigma_.at(1),2)));
+
+    //Cr
+    float Cr = 1/sqrt(2*pow(sigma_.at(2),2) * M_PI) * exp(-0.5 * (pow((pixel.at(2) - mu_.at(2))/sigma_.at(2),2)));
+
+
+    p_x_w_.push_back(Y);
+    p_x_w_.push_back(Cb);
+    p_x_w_.push_back(Cr);
 }
 
 //Setters
@@ -61,5 +70,5 @@ float Texture::getPriori(){
 
 vector<float> Texture::getVraisemblance()
 {
- return p_x_w_;
+    return p_x_w_;
 }

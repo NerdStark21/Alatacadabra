@@ -15,21 +15,21 @@ bayesien::bayesien()
     //Écart-type de la classe fond
     vector<float> sigmaBack;
 
-    muBack.push_back(96.25);
-    muBack.push_back(120.56);
-    muBack.push_back(137.53);
+    muBack.push_back(126);
+    muBack.push_back(123);
+    muBack.push_back(135);
 
-    sigmaBack.push_back(60.94);
-    sigmaBack.push_back(8.94);
-    sigmaBack.push_back(13.15);
+    sigmaBack.push_back(54.4);
+    sigmaBack.push_back(8.9);
+    sigmaBack.push_back(13.3);
 
-    muSkin.push_back(1);
-    muSkin.push_back(1);
-    muSkin.push_back(1);
+    muSkin.push_back(180);
+    muSkin.push_back(109);
+    muSkin.push_back(154);
 
-    sigmaSkin.push_back(1);
-    sigmaSkin.push_back(1);
-    sigmaSkin.push_back(1);
+    sigmaSkin.push_back(14);
+    sigmaSkin.push_back(4.3);
+    sigmaSkin.push_back(7);
 
     skin_ = new Skin(muSkin,sigmaSkin);
     background_ = new Background(muBack, sigmaBack);
@@ -38,26 +38,47 @@ bayesien::bayesien()
 void bayesien::proba_posteriori()
 {
 
-//Pour la peau
-vector<float> p_w_x_skin;
- p_w_x_skin.at(1) = (skin_->getVraisemblance().at(1) * skin_->getPriori())/proba_totale_.at(1);
- p_w_x_skin.at(2) = (skin_->getVraisemblance().at(2) * skin_->getPriori())/proba_totale_.at(2);
- p_w_x_skin.at(3) = (skin_->getVraisemblance().at(3) * skin_->getPriori())/proba_totale_.at(3);
- skin_->setPosteriori(p_w_x_skin);
+    //Pour la peau
 
- //Pour le fond
- vector<float> p_w_x_back;
-  p_w_x_back.at(1) = (background_->getVraisemblance().at(1) * background_->getPriori())/proba_totale_.at(1);
-  p_w_x_back.at(2) = (background_->getVraisemblance().at(2) * background_->getPriori())/proba_totale_.at(2);
-  p_w_x_back.at(3) = (background_->getVraisemblance().at(3) * background_->getPriori())/proba_totale_.at(3);
-  background_->setPosteriori(p_w_x_skin);
+    vector<float> p_w_x_skin;
+    float val1,val2,val3;
+
+    val1 = (skin_->getVraisemblance().at(0) * skin_->getPriori())/proba_totale_.at(0);
+    val2 = (skin_->getVraisemblance().at(1) * skin_->getPriori())/proba_totale_.at(1);
+    val3 = (skin_->getVraisemblance().at(2) * skin_->getPriori())/proba_totale_.at(2);
+
+    p_w_x_skin.push_back(val1);
+    p_w_x_skin.push_back(val2);
+    p_w_x_skin.push_back(val3);
+
+    skin_->setPosteriori(p_w_x_skin);
+
+    //Pour le fond
+
+    vector<float> p_w_x_back;
+    float val4,val5,val6;
+
+    val4 = (background_->getVraisemblance().at(0) * background_->getPriori())/proba_totale_.at(0);
+    val5 = (background_->getVraisemblance().at(1) * background_->getPriori())/proba_totale_.at(1);
+    val6 = (background_->getVraisemblance().at(2) * background_->getPriori())/proba_totale_.at(2);
+
+    p_w_x_back.push_back(val4);
+    p_w_x_back.push_back(val5);
+    p_w_x_back.push_back(val6);
+
+    background_->setPosteriori(p_w_x_back);
 }
 
 void bayesien::proba_totale(){
+    float val1,val2,val3;
 
-    proba_totale_.at(1) = skin_->getVraisemblance().at(1) * skin_->getPriori() + background_->getVraisemblance().at(1) * background_->getPriori();
-    proba_totale_.at(2) = skin_->getVraisemblance().at(2) * skin_->getPriori() + background_->getVraisemblance().at(2) * background_->getPriori();
-    proba_totale_.at(3) = skin_->getVraisemblance().at(3) * skin_->getPriori() + background_->getVraisemblance().at(3) * background_->getPriori();
+    val1 = skin_->getVraisemblance().at(0) * skin_->getPriori() + background_->getVraisemblance().at(0) * background_->getPriori();
+    val2 = skin_->getVraisemblance().at(1) * skin_->getPriori() + background_->getVraisemblance().at(1) * background_->getPriori();
+    val3 = skin_->getVraisemblance().at(2) * skin_->getPriori() + background_->getVraisemblance().at(2) * background_->getPriori();
+
+    proba_totale_.push_back(val1);
+    proba_totale_.push_back(val2);
+    proba_totale_.push_back(val3);
 
 }
 

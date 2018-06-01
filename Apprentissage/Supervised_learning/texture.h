@@ -21,7 +21,7 @@ public:
     //Calcul des probabiltés
 
     void probab_priori(float proba);
-    vector<float> vraisemblance(vector<float> x);
+    void vraisemblance(vector<float> pixel);
 
     //Setters
     void setSigma(vector<float> sigma);

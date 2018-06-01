@@ -368,6 +368,11 @@ release/main.o: ../Supervised_learning/main.cpp ../Supervised_learning/mainwindo
 		C:/Qt/5.10.0/mingw53_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtGui/qicon.h \
+		../Supervised_learning/traitement.h \
+		../Supervised_learning/bayesien.h \
+		../Supervised_learning/skin.h \
+		../Supervised_learning/texture.h \
+		../Supervised_learning/background.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -567,7 +572,7 @@ release/imageutile.o: ../Supervised_learning/imageutile.cpp ../Supervised_learni
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\imageutile.o ..\Supervised_learning\imageutile.cpp
 
-release/traitement.o: ../Supervised_learning/traitement.cpp ../Supervised_learning/direction.h \
+release/traitement.o: ../Supervised_learning/traitement.cpp ../Supervised_learning/traitement.h \
 		../Supervised_learning/bayesien.h \
 		../Supervised_learning/skin.h \
 		../Supervised_learning/texture.h \
@@ -696,8 +701,7 @@ release/traitement.o: ../Supervised_learning/traitement.cpp ../Supervised_learni
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/imgproc/types_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/core/core_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui.hpp \
-		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h \
-		../Supervised_learning/imageutile.h
+		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\traitement.o ..\Supervised_learning\traitement.cpp
 
 release/moc_mainwindow.o: release/moc_mainwindow.cpp 
