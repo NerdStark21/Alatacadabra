@@ -20,8 +20,8 @@ public:
 
     //Calcul des probabiltés
 
-    vector<float> probab_priori(float proba);
-    vector<float> vraisemblance(vector<float> x);
+    void probab_priori(float proba);
+    void vraisemblance(vector<float> pixel);
 
     //Setters
     void setSigma(vector<float> sigma);

@@ -1,12 +1,12 @@
-#ifndef DIRECTION_H
-#define DIRECTION_H
+#ifndef TRAITEMENT_H
+#define TRAITEMENT_H
 
 #include <vector>
 #include "bayesien.h"
 #include "background.h"
 #include "skin.h"
-
 #include "mainwindow.h"
+
 #include <QApplication>
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -18,15 +18,24 @@
 using namespace cv;
 using namespace std;
 
-using namespace std;
-
 class Traitement
 {
 public:
     Traitement();
     ~Traitement();
     void setDirection(int direction);
-    int getDirection();
+    int getDirection(Mat frame);
+    VideoCapture getVideoCapture();
+    /**
+     * @brief Segmentation
+     * @param baye
+     * Attribut bayésien permettant de calculer des probabilités
+     * @param frame
+     * Image à traiter
+     * @return
+     * Image segmentée en noir et blanc
+     */
+    Mat Segmentation(bayesien * baye, Mat frameYCbCr);
 
 
 private:
@@ -36,4 +45,4 @@ private:
     int direction_;
 };
 
-#endif // DIRECTION_H
+#endif // TRAITEMENT_H
