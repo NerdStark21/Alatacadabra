@@ -23,6 +23,8 @@ for i = 1:20
     
 end
 
+pixels = pixels * 255;
+
 moy = mean(pixels, 2);
 ect = std(pixels, 0, 2);
 
