@@ -96,12 +96,13 @@ Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
     //On crée une copie de frameYCbCr qui deviendra une image binaire
     frameYCbCr.copyTo(frameBlack);
 
+    CvScalar pix;
+
     for (it = frameBlack.begin<CvScalar>(); it != frameBlack.end<CvScalar>(); it++){
 
         //cout<<"Je suis dans le for"<<endl;
 
         //Récupération de la valeur du pixel
-        CvScalar pix;
         pix = *it;
 
         vector<float> pixel;
