@@ -46,9 +46,9 @@ void bayesien::proba_posteriori()
     vector<float> p_w_x_skin;
     float val1,val2,val3;
 
-    val1 = (skin_->getVraisemblance().at(0) * skin_->getPriori())/proba_totale_.at(0);
-    val2 = (skin_->getVraisemblance().at(1) * skin_->getPriori())/proba_totale_.at(1);
-    val3 = (skin_->getVraisemblance().at(2) * skin_->getPriori())/proba_totale_.at(2);
+    val1 = float(skin_->getVraisemblance().at(0) * skin_->getPriori())/proba_totale_.at(0);
+    val2 = float(skin_->getVraisemblance().at(1) * skin_->getPriori())/proba_totale_.at(1);
+    val3 = float(skin_->getVraisemblance().at(2) * skin_->getPriori())/proba_totale_.at(2);
 
     p_w_x_skin.push_back(val1);
     p_w_x_skin.push_back(val2);
@@ -61,9 +61,9 @@ void bayesien::proba_posteriori()
     vector<float> p_w_x_back;
     float val4,val5,val6;
 
-    val4 = (background_->getVraisemblance().at(0) * background_->getPriori())/proba_totale_.at(0);
-    val5 = (background_->getVraisemblance().at(1) * background_->getPriori())/proba_totale_.at(1);
-    val6 = (background_->getVraisemblance().at(2) * background_->getPriori())/proba_totale_.at(2);
+    val4 = float(background_->getVraisemblance().at(0) * background_->getPriori())/proba_totale_.at(0);
+    val5 = float(background_->getVraisemblance().at(1) * background_->getPriori())/proba_totale_.at(1);
+    val6 = float(background_->getVraisemblance().at(2) * background_->getPriori())/proba_totale_.at(2);
 
     p_w_x_back.push_back(val4);
     p_w_x_back.push_back(val5);
@@ -92,8 +92,8 @@ vector<float> bayesien::getProbaTotale(){
 
 bool bayesien::regle_bayesienne(vector<float> pixel)
 {
-    skin_->proba_priori(1/5);
-    background_->proba_priori(4/5);
+    skin_->proba_priori(1./5);
+    background_->proba_priori(4./5);
     skin_->vraisemblance(pixel);
     background_->vraisemblance(pixel);
     proba_totale();

@@ -106,9 +106,6 @@ Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
 
     CvScalar pix;
 
-
-    CvScalar pix;
-
     for (it = frameBlack.begin<CvScalar>(); it != frameBlack.end<CvScalar>(); it++){
 
         //cout<<"Je suis dans le for"<<endl;
