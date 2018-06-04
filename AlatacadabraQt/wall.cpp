@@ -3,8 +3,8 @@
 using namespace cv;
 using namespace std;
 
-Wall::Wall(Rect stuff)
-    : stuff_(stuff){
+Wall::Wall(Rect rectangle)
+    : rectangle_(rectangle){
     depth_ = 5;
 }
 
@@ -14,35 +14,35 @@ void Wall::drawWall(){
     glBegin(GL_QUADS);
     glColor3ub(255, 0, 0);
 
-    glVertex3f(stuff_.x,stuff_.y, 0);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, 0);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, 0);
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, 0);
+    glVertex3f(rectangle_.x,rectangle_.y, 0);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, 0);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, 0);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, 0);
 
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, 0);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, 0);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, 0);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, 0);
 
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, depth_);
-    glVertex3f(stuff_.x,stuff_.y, depth_);
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, depth_);
 
-    glVertex3f(stuff_.x,stuff_.y, depth_);
-    glVertex3f(stuff_.x,stuff_.y, 0);
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, 0);
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, depth_);
+    glVertex3f(rectangle_.x,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x,rectangle_.y, 0);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, 0);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, depth_);
 
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, 0);
-    glVertex3f(stuff_.x,stuff_.y + stuff_.height, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y + stuff_.height, 0);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, 0);
+    glVertex3f(rectangle_.x,rectangle_.y + rectangle_.height, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y + rectangle_.height, 0);
 
-    glVertex3f(stuff_.x,stuff_.y, 0);
-    glVertex3f(stuff_.x,stuff_.y, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, depth_);
-    glVertex3f(stuff_.x + stuff_.width,stuff_.y, 0);
+    glVertex3f(rectangle_.x,rectangle_.y, 0);
+    glVertex3f(rectangle_.x,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, depth_);
+    glVertex3f(rectangle_.x + rectangle_.width,rectangle_.y, 0);
 
     glEnd();
     glPopMatrix();

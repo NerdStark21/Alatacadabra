@@ -33,7 +33,8 @@ public:
     void drawSnake();
     void drawFruits();
     void Display();
-
+    void setSnakeDirection(Point p);
+    void intToDirection(int i);
     void createFruit();
     void update();
     void fruitEaten();

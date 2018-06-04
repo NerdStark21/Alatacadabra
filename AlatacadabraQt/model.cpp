@@ -41,6 +41,11 @@ void Model::update(){
     fruitEaten();
 }
 
+/**
+ * @brief Model::fruitEaten
+ * Checks if a fruit has been eaten, and process it on the snake.
+ */
+
 void Model::fruitEaten(){
     for(Fruit f : fruits_){
         if( f.getPosition()== snake_.getBody().begin()->getCenter()){
@@ -71,9 +76,35 @@ void Model::drawSnake(){
     snake_.Display();
 }
 
+void Model::setSnakeDirection(Point direction){
+    snake_.setDirection(direction);
+}
 
 
-/*
+/**
+ * Change the snake direction accordingly with the int returned in the detection class.
+ */
+
+void Model::intToDirection(int i){
+    switch(i){
+    case(0):
+        break;
+    case(1):
+        setSnakeDirection(Point(-1,0));
+        break;
+    case(2):
+        setSnakeDirection(Point(0,1));
+        break;
+    case(3):
+        setSnakeDirection(Point(1,0));
+        break;
+    case(4):
+        setSnakeDirection(Point(0,-1));
+        break;
+    }
+}
+
+/**
  * Create a fruit on a random free space
  */
 

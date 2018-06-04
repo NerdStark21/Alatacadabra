@@ -91,8 +91,8 @@ vector<float> bayesien::getProbaTotale(){
 
 bool bayesien::regle_bayesienne(vector<float> pixel)
 {
-    skin_->probab_priori(1/5);
-    background_->probab_priori(4/5);
+    skin_->proba_priori(1/5);
+    background_->proba_priori(4/5);
     skin_->vraisemblance(pixel);
     background_->vraisemblance(pixel);
     proba_totale();

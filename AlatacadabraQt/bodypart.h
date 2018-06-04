@@ -17,7 +17,7 @@ private:
     GLUquadric *ball_quadric_;
 
 public:
-    BodyPart(Point center, int radius);
+    BodyPart(Point center);
     BodyPart(){}
     void Display();
     Point getCenter(){return center_;}

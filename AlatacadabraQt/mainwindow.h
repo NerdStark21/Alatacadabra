@@ -26,12 +26,14 @@ protected:
     // Fonction d'affichage
     void paintGL();
 
+    void keyPressEvent(QKeyEvent * event);
+
 private:
     int width_;
     int height_;
     Model* model_;
     float m_TimeElapsed { 0.0f };
-    QTimer m_AnimationTimer;
+    QTimer m_AnimationTimer_;
     Detection* detection_;
 
     /*

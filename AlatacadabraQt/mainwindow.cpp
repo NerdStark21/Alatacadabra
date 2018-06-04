@@ -27,13 +27,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     // Connexion du timer
-    connect(&m_AnimationTimer,  &QTimer::timeout, [&] {
-        m_TimeElapsed += 1.0f / 12.0f;
+    connect(&m_AnimationTimer_,  &QTimer::timeout, [&] {
         this->update();
+        updateGL();
     });
 
-    m_AnimationTimer.setInterval(10);
-    m_AnimationTimer.start();
+    m_AnimationTimer_.setInterval(1000);
+    m_AnimationTimer_.start();
 
 
     qDebug()<<"On a set le timer"<<endl;
@@ -105,4 +105,73 @@ void MainWindow::paintGL()
     // On va dessiner tous les murs
     model_->drawWalls();
     model_->Display();
+}
+
+void MainWindow::keyPressEvent(QKeyEvent * event)
+{
+    cout<<"on entre dans key press event"<<endl;
+    switch(event->key())
+    {
+
+    case Qt::Key_Left:
+    {
+        cout<<"Left key"<<endl;
+        model_->setSnakeDirection(Point(-1,0));
+        break;
+    }
+
+    case Qt::Key_Right:
+    {
+
+        cout<<"Right key"<<endl;
+        model_->setSnakeDirection(Point(1,0));
+        break;
+    }
+
+    case Qt::Key_Down:
+    {
+
+        cout<<"Down key"<<endl;
+        model_->setSnakeDirection(Point(0,-1));
+        break;
+    }
+
+
+    case Qt::Key_Up:
+    {
+        cout<<"Up key"<<endl;
+        model_->setSnakeDirection(Point(0,1));
+        break;
+    }
+
+    // Activation/Arret de l'animation
+    case Qt::Key_Space:
+    {
+        if(m_AnimationTimer_.isActive())
+            m_AnimationTimer_.stop();
+        else
+            m_AnimationTimer_.start();
+
+        break;
+    }
+
+
+    case Qt::Key_Enter:
+    {
+        break;
+    }
+
+    // Cas par defaut
+    default:
+    {
+        // Ignorer l'evenement
+        event->ignore();
+        return;
+    }
+    }
+
+    // Acceptation de l'evenement et mise a jour de la scene
+    event->accept();
+    updateGL();
+
 }

@@ -11,11 +11,11 @@ using namespace cv;
 class Wall
 {
 private:
-    Rect stuff_;
+    Rect rectangle_;
     int depth_;
 
 public:
-    Wall(Rect stuff);
+    Wall(Rect rectangle);
     void drawWall();
 };
 

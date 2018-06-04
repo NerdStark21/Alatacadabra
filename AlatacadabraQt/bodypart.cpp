@@ -6,15 +6,15 @@
 //BodyPart::BodyPart(Point center, int radius)
 //    : center_(center), radius_(radius){}
 
-BodyPart::BodyPart(Point center, int radius){
+BodyPart::BodyPart(Point center){
     center_=center;
-    radius_=radius;
+    radius_=10;
     ball_quadric_= gluNewQuadric();
 }
 
 void BodyPart::Display(){
 
-    qDebug()<<"Display de BodyPart"<<endl;
+//    qDebug()<<"Display de BodyPart"<<endl;
 
 
     int R_,V_,B_;
