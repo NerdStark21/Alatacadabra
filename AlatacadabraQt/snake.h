@@ -3,12 +3,15 @@
 
 #include "bodypart.h"
 #include <vector>
+#include <list>
+
+using namespace std;
 
 class Snake
 {
 private:
-    // Vecteur contenant toutes les parties du corps du snake
-    Vector<BodyPart> body_;
+    // Vecteur contenant toutes les parties du corps du snake :Le premier élément est la tête.
+    list<BodyPart> body_;
     int size_;
     Point direction_;
 
@@ -27,8 +30,8 @@ public:
     void move();
     bool deadlyPlace();
     void eatFruit();
-    void setDirection(Point p){direction_ = p;}
-    Vector<BodyPart> getBody(){return body_;}
+    void setDirection(Point p);
+    list<BodyPart> getBody(){return body_;}
 };
 
 #endif // SNAKE_H

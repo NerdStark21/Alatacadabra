@@ -14,7 +14,7 @@ BodyPart::BodyPart(Point center, int radius){
 
 void BodyPart::Display(){
 
-    qDebug()<<"Display de BodyPart"<<endl;
+//    qDebug()<<"Display de BodyPart"<<endl;
 
 
     int R_,V_,B_;
