@@ -79,6 +79,7 @@ void bayesien::proba_totale(){
     val2 = skin_->getVraisemblance().at(1) * skin_->getPriori() + background_->getVraisemblance().at(1) * background_->getPriori();
     val3 = skin_->getVraisemblance().at(2) * skin_->getPriori() + background_->getVraisemblance().at(2) * background_->getPriori();
 
+    proba_totale_ = vector<float>();
     proba_totale_.push_back(val1);
     proba_totale_.push_back(val2);
     proba_totale_.push_back(val3);
@@ -98,13 +99,9 @@ bool bayesien::regle_bayesienne(vector<float> pixel)
     proba_totale();
     proba_posteriori();
 
-    cout<<"Valeur posteriori Main en Y: "<< skin_->getVraisemblance().at(0) <<endl;
-    cout<<"Valeur posteriori Fond en Y: "<< background_->getVraisemblance().at(0) <<endl;
+    cout<<"Valeur vraisemblance Main en Y: "<< skin_->getVraisemblance().at(0) <<endl;
+    cout<<"Valeur vraisemblance Fond en Y: "<< background_->getVraisemblance().at(0) <<endl;
 
-    if(skin_->getPosteriori()>background_->getPosteriori())
-    {
-        return true;
-    }
-    return false;
+    return skin_->getPosteriori() > background_->getPosteriori();
 }
 

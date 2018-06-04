@@ -32,6 +32,7 @@ void Texture::vraisemblance(vector<float> pixel)
     float Cr = 1/sqrt(2*pow(sigma_.at(2),2) * M_PI) * exp(-0.5 * (pow((pixel.at(2) - mu_.at(2))/sigma_.at(2),2)));
 
 
+    p_x_w_ = vector<float>();
     p_x_w_.push_back(Y);
     p_x_w_.push_back(Cb);
     p_x_w_.push_back(Cr);
