@@ -17,13 +17,13 @@ Snake::Snake(int width, int heigth)
     bottomRight_=  Point(width,heigth);
 
     // Create the snake with 1 bodypart
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)),1));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-1),1));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-2),1));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2))));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-1)));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-2)));
 
     size_=1;
     direction_=Point(0,1);
-    radius_=0.5;
+    radius_=50;
 
 }
 
@@ -38,7 +38,7 @@ void Snake::move(){
     if(true/*!deadlyPlace()*/){
         qDebug()<<"Position de Snake : "<<"["<<body_.front().getCenter().x<<" ; "<< body_.front().getCenter().y<<"]";
 //        qDebug()<<"  ["<<body_.
-        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_,radius_);
+        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_);
         body_.push_front(newPart);
         body_.pop_back();
         qDebug()<<body_.size()<<endl;
@@ -53,10 +53,8 @@ void Snake::move(){
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
-    body_.push_back(BodyPart(body_.back().getCenter(),1));
+    body_.push_back(BodyPart(body_.back().getCenter()));
 }
-
-
 
 // Returns a boolean : true if the snake shall die, false if not.
 bool Snake::deadlyPlace(){

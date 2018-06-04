@@ -6,9 +6,9 @@
 //BodyPart::BodyPart(Point center, int radius)
 //    : center_(center), radius_(radius){}
 
-BodyPart::BodyPart(Point center, int radius){
+BodyPart::BodyPart(Point center){
     center_=center;
-    radius_=radius;
+    radius_=10;
     ball_quadric_= gluNewQuadric();
 }
 
