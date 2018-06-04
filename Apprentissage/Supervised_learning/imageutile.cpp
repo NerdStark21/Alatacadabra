@@ -27,11 +27,11 @@ vector<float> ImageUtile::RGBtoYCbCR(vector<float> pixel)
 
 Mat ImageUtile::MatToYCbCr(Mat M){
     Mat YcbCr;
-   /*//Transformation de la matrice en YCbCr
+   /*Transformation de la matrice en YCbCr
     MatIterator_ it;
     Point p = Point(0,0);
     cout<<M.at(&p)<<endl;
-    /*for(it = M.begin(); it != M.end(); it++){
+    for(it = M.begin(); it != M.end(); it++){
 
 
     }*/

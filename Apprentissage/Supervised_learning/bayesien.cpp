@@ -1,4 +1,7 @@
 #include "bayesien.h"
+#include <iostream>
+
+using namespace std;
 
 
 bayesien::bayesien()
@@ -94,6 +97,10 @@ bool bayesien::regle_bayesienne(vector<float> pixel)
     background_->vraisemblance(pixel);
     proba_totale();
     proba_posteriori();
+
+    cout<<"Valeur posteriori Main en Y: "<< skin_->getVraisemblance().at(0) <<endl;
+    cout<<"Valeur posteriori Fond en Y: "<< background_->getVraisemblance().at(0) <<endl;
+
     if(skin_->getPosteriori()>background_->getPosteriori())
     {
         return true;

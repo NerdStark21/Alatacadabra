@@ -5,8 +5,8 @@ Traitement::Traitement()
 {
     Mat frame;
 
-    int frameWidth = 320;
-    int frameHeight = 240;
+    int frameWidth = 160;
+    int frameHeight = 120;
 
     direction_ = 0;
 
@@ -66,6 +66,7 @@ VideoCapture Traitement::getVideoCapture(){
 
 int Traitement::getDirection(Mat frame){
 
+
     Mat frameYCbCr; // Image dans le domaine YCbCr
     Mat frameBlack; //Image binaire
 
@@ -78,9 +79,14 @@ int Traitement::getDirection(Mat frame){
 
     bayesien *baye = new bayesien();
 
+    cout << "On est avant segmentation"<<endl;
+
     frameBlack = Segmentation(baye, frameYCbCr);
 
     //Évaluation de la direction en fonction de l'image segmentée
+
+    direction_ = 1;
+    cout<<"Direction calculée : "<< 1 <<endl;
 
     return direction_;
 }
@@ -94,14 +100,19 @@ Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
     MatIterator_<CvScalar> it;
 
     //On crée une copie de frameYCbCr qui deviendra une image binaire
-    frameYCbCr.copyTo(frameBlack);
+    frameBlack = frameYCbCr.clone();
+
+    //cout << "On est dans segmentation "<<endl;
+
+    CvScalar pix;
+
 
     for (it = frameBlack.begin<CvScalar>(); it != frameBlack.end<CvScalar>(); it++){
 
         //cout<<"Je suis dans le for"<<endl;
 
         //Récupération de la valeur du pixel
-        CvScalar pix;
+
         pix = *it;
 
         vector<float> pixel;
@@ -109,17 +120,21 @@ Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
         pixel.push_back(pix.val[1]);
         pixel.push_back(pix.val[2]);
 
+
         //Application de la règle bayésienne
+
+        //cout<<"Je suis dans segmentation"<<endl;
 
         if (baye->regle_bayesienne(pixel)){
 
-            //On met le pixel en blanc
-            pix.val[0] = 255;
-            pix.val[1] = 255;
-            pix.val[2] = 255;
+            pix.val[0] = 1;
+            pix.val[1] = 0;
+            pix.val[2] = 0;
 
-            //On l'insère dans l'image en noir et blanc
             *it = pix;
+
+            cout<<"true"<<endl;
+
         }
         else{
 
@@ -132,7 +147,14 @@ Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
             //On l'insère dans l'image en noir et blanc
             *it = pix;
 
+            cout<<"false"<<endl;
         }
+
+
+        //cout<<"Valeur pixel YCbCr: "<<pix2.val[0]<<endl;
+        //cout <<"Valeur pixel Black: "<<pix3.val[0]<<endl;
+        cout<<"Valeur iterateur: "<<pix.val[0]<<endl;
+
 
     }
 

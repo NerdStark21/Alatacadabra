@@ -16,9 +16,10 @@ VideoCapture * webCam_;
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    /*QApplication a(argc, argv);
     MainWindow w;
-    w.show();
+    w.show();*/
+
     Traitement * traitement = new Traitement();
 
     // Lancement de la vidéo
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
         int direction = 0;
 
 
-        if (i== 1){
+        if (i== 3){
             cout<<"En cours de traitement, ça prend environ 2 min..."<<endl;
             direction = traitement->getDirection(frameCopy);
             cout<<"Diretion = "<<direction<<endl;
@@ -52,5 +53,6 @@ int main(int argc, char *argv[])
 
     }
 
-    return a.exec();
+    return 0;
+    //return a.exec();
 }
