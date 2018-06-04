@@ -18,12 +18,12 @@ Snake::Snake(int width, int heigth)
 
     // Create the snake with 1 bodypart
     body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2))));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-1)));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-2)));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-20)));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-40)));
 
     size_=1;
     direction_=Point(0,1);
-    radius_=50;
+    radius_=10;
 
 }
 
@@ -38,7 +38,7 @@ void Snake::move(){
     if(true/*!deadlyPlace()*/){
         qDebug()<<"Position de Snake : "<<"["<<body_.front().getCenter().x<<" ; "<< body_.front().getCenter().y<<"]";
 //        qDebug()<<"  ["<<body_.
-        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_);
+        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_);
         body_.push_front(newPart);
         body_.pop_back();
         qDebug()<<body_.size()<<endl;

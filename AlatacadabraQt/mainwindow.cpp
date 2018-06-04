@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Connexion du timer
     connect(&m_AnimationTimer_,  &QTimer::timeout, [&] {
         this->update();
+        updateGL();
     });
 
     m_AnimationTimer_.setInterval(1000);
