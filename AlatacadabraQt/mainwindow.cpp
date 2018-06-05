@@ -102,7 +102,6 @@ void MainWindow::paintGL()
               0.0,1.0,0.0);
 
     // On va dessiner tous les murs
-    model_->drawWalls();
     model_->Display();
 }
 
