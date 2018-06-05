@@ -32,11 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
         updateGL();
     });
 
-    m_AnimationTimer_.setInterval(200);
+    m_AnimationTimer_.setInterval(100);
     m_AnimationTimer_.start();
-
-
-    qDebug()<<"On a set le timer"<<endl;
 
     // Création du modèle
     int dimension=MAX_DIMENSION;
@@ -55,7 +52,6 @@ MainWindow::~MainWindow(){
 // Fonction d'initialisation
 void MainWindow::initializeGL()
 {
-    qDebug()<<"On initialise le GL"<<endl;
     // Reglage de la couleur de fond
     glClearColor(15, 15, 15, 1);
 
@@ -120,13 +116,13 @@ void MainWindow::paintGL()
 
 void MainWindow::keyPressEvent(QKeyEvent * event)
 {
-    cout<<"on entre dans key press event"<<endl;
+    //cout<<"on entre dans key press event"<<endl;
     switch(event->key())
     {
 
     case Qt::Key_Left:
     {
-        cout<<"Left key"<<endl;
+        //cout<<"Left key"<<endl;
         model_->setSnakeDirection(Point(-1,0));
         break;
     }
@@ -134,7 +130,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
     case Qt::Key_Right:
     {
 
-        cout<<"Right key"<<endl;
+        //cout<<"Right key"<<endl;
         model_->setSnakeDirection(Point(1,0));
         break;
     }
@@ -142,7 +138,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
     case Qt::Key_Down:
     {
 
-        cout<<"Down key"<<endl;
+        //cout<<"Down key"<<endl;
         model_->setSnakeDirection(Point(0,-1));
         break;
     }
@@ -150,7 +146,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 
     case Qt::Key_Up:
     {
-        cout<<"Up key"<<endl;
+        //cout<<"Up key"<<endl;
         model_->setSnakeDirection(Point(0,1));
         break;
     }

@@ -1,4 +1,5 @@
 #include "fruit.h"
+#include <qdebug.h>
 
 
 Fruit::Fruit(Point position){
@@ -14,12 +15,13 @@ Fruit::~Fruit(){
 
 void Fruit::drawFruit(){
     // Affichage de la quadrique
-
+    qDebug()<<"Affichage du fruit"<<endl;
     int R_,V_,B_;
     R_=100;
     V_=0;
     B_=0;
     glPushMatrix();
+    qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
 
 
