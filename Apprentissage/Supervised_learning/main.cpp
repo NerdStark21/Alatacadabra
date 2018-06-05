@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 
 
         if (i== 3){
-            cout<<"En cours de traitement, ça prend environ 2 min..."<<endl;
-            direction = traitement->getDirection(frameCopy);
-            cout<<"Diretion = "<<direction<<endl;
+            //cout<<"En cours de traitement, ca prend environ 2 min..."<<endl;
+            direction = traitement->Direction(frameCopy);
+            cout<<"Direction = "<<direction<<endl;
 
         }
         i+=1;

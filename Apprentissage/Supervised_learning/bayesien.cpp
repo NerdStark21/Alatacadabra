@@ -92,15 +92,15 @@ vector<float> bayesien::getProbaTotale(){
 
 bool bayesien::regle_bayesienne(vector<float> pixel)
 {
-    skin_->proba_priori(1./5);
-    background_->proba_priori(4./5);
+    skin_->proba_priori(1./2);
+    background_->proba_priori(1./2);
     skin_->vraisemblance(pixel);
     background_->vraisemblance(pixel);
     proba_totale();
     proba_posteriori();
 
-    cout<<"Valeur vraisemblance Main en Y: "<< skin_->getVraisemblance().at(0) <<endl;
-    cout<<"Valeur vraisemblance Fond en Y: "<< background_->getVraisemblance().at(0) <<endl;
+    //cout<<"Valeur vraisemblance Main en Y: "<< skin_->getVraisemblance().at(0) <<endl;
+    //cout<<"Valeur vraisemblance Fond en Y: "<< background_->getVraisemblance().at(0) <<endl;
 
     return skin_->getPosteriori() > background_->getPosteriori();
 }

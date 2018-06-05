@@ -11,6 +11,8 @@
 #include "opencv2/video/tracking.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
+#include "opencv2/core/mat.hpp"
+#include "opencv2/core.hpp"
 
 #include <cstdio>
 #include <iostream>
@@ -24,7 +26,7 @@ public:
     Traitement();
     ~Traitement();
     void setDirection(int direction);
-    int getDirection(Mat frame);
+    int Direction(Mat frame);
     VideoCapture getVideoCapture();
     /**
      * @brief Segmentation
@@ -36,7 +38,8 @@ public:
      * Image segmentée en noir et blanc
      */
     Mat Segmentation(bayesien * baye, Mat frameYCbCr);
-
+    int findDirection(Mat frameBlack);
+    int getDirection();
 
 private:
 
