@@ -170,6 +170,5 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 
     // Acceptation de l'evenement et mise a jour de la scene
     event->accept();
-    updateGL();
 
 }
