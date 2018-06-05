@@ -6,6 +6,7 @@
 //#include <QtOpenGL/QGLWidget>
 #include <QDebug>
 #include <qdebug.h>
+#include <atomic>
 #include "wall.h"
 #include "partie.h"
 #include "fruit.h"
@@ -24,9 +25,11 @@ private:
     int width_;
     int heigth_;
 
+    // Pour le multithreading
+    atomic<int> * currentDirection_;
 
 public:
-    Model();
+    Model(atomic<int> * currentDirection);
 
     void drawWalls();
     void drawGrid();

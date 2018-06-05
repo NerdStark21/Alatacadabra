@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 */
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(atomic<int> *deplacement, QWidget *parent) :
     QGLWidget(parent)
 {
     // Reglage de la taille/position
@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug()<<"On a set le timer"<<endl;
 
     // Création du modèle
-    model_ = new Model();
+    model_ = new Model(deplacement);
 }
 
 void MainWindow::update(){

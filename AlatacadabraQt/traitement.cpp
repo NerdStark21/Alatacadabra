@@ -1,7 +1,8 @@
 #include "traitement.h"
 
 
-Traitement::Traitement()
+Traitement::Traitement(atomic<int> *directionPipeline)
+    : directionPipeline_(directionPipeline)
 {
     Mat frame;
 

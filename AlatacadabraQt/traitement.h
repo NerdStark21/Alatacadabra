@@ -17,6 +17,8 @@
 #include <cstdio>
 #include <iostream>
 
+#include <atomic>
+
 using namespace cv;
 using namespace std;
 
@@ -28,7 +30,7 @@ using namespace std;
 class Traitement
 {
 public:
-    Traitement();
+    Traitement(atomic<int> * directionPipeline);
     ~Traitement();
 
     /**
@@ -75,6 +77,9 @@ private:
     VideoCapture webCam_;
     // Attribut permettant d'indiquer la direction à prendre. Il vaut 0 pour indéterminé, 1 pour gauche, 2 pour haut, 3 pour droite et 4 pour bas
     int direction_;
+
+    // Pour le multithreading
+    atomic<int> * directionPipeline_;
 };
 
 #endif // TRAITEMENT_H

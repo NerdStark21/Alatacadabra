@@ -11,7 +11,7 @@ class MainWindow : public QGLWidget
 
 public:
     //explicit MainWindow(QWidget *parent = 0);
-    MainWindow(QWidget * parent = nullptr);
+    MainWindow(atomic<int> * deplacement, QWidget * parent = nullptr);
     ~MainWindow();
     void update();
 

@@ -1,7 +1,8 @@
 #include "model.h"
 
 
-Model::Model()
+Model::Model(atomic<int> *currentDirection)
+    : currentDirection_(currentDirection)
 {
     qDebug()<<"Création du model"<<endl;
 
