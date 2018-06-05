@@ -5,8 +5,8 @@ Traitement::Traitement()
 {
     Mat frame;
 
-    int frameWidth = 160;
-    int frameHeight = 120;
+    int frameWidth = 16;
+    int frameHeight = 12;
 
     direction_ = 0;
 
@@ -64,7 +64,7 @@ VideoCapture Traitement::getVideoCapture(){
  * @return direction_
  */
 
-int Traitement::getDirection(Mat frame){
+int Traitement::Direction(Mat frame){
 
 
     Mat frameYCbCr; // Image dans le domaine YCbCr
@@ -85,8 +85,8 @@ int Traitement::getDirection(Mat frame){
 
     //Évaluation de la direction en fonction de l'image segmentée
 
-    direction_ = 1;
-    cout<<"Direction calculée : "<< 1 <<endl;
+    direction_ = findDirection(frameBlack);
+    cout<<"Direction calculée : "<< this->getDirection() <<endl;
 
     return direction_;
 }
@@ -94,71 +94,112 @@ int Traitement::getDirection(Mat frame){
 
 Mat Traitement::Segmentation(bayesien * baye, Mat frameYCbCr){
 
-    Mat frameBlack; //Image binaire
 
-    // Itérator qui parcourira tous les pixels de l'image qui sont de type CvScalar
-    MatIterator_<CvScalar> it;
+    //Pour chaque pixels de l'image, on réalise une classification bayésienne:
+    int row = frameYCbCr.rows;
+    int col = frameYCbCr.cols;
 
-    //On crée une copie de frameYCbCr qui deviendra une image binaire
-    frameBlack = frameYCbCr.clone();
+    Mat frameBlack(row,col, CV_64F, Scalar(0)); //Image binaire
 
     //cout << "On est dans segmentation "<<endl;
 
+    //Images permettant de réaliser des traitements comme l'extraction d'un pixel.
+    IplImage tempBlack = frameBlack;
+    IplImage tempYCbCr = frameYCbCr;
+
     CvScalar pix;
 
+    for (int i = 0 ; i < row ; i++){
 
-    CvScalar pix;
+        for (int j = 0 ; j < col ; j++){
 
-    for (it = frameBlack.begin<CvScalar>(); it != frameBlack.end<CvScalar>(); it++){
+            //cout<<"Je suis dans le for"<<endl;
 
-        //cout<<"Je suis dans le for"<<endl;
+            //Récupération de la valeur du pixel
 
-        //Récupération de la valeur du pixel
+            pix = cvGet2D(&tempYCbCr, i , j);
 
-        pix = *it;
-
-        vector<float> pixel;
-        pixel.push_back(pix.val[0]);
-        pixel.push_back(pix.val[1]);
-        pixel.push_back(pix.val[2]);
+            vector<float> pixel;
+            pixel.push_back(pix.val[0]);
+            pixel.push_back(pix.val[1]);
+            pixel.push_back(pix.val[2]);
 
 
-        //Application de la règle bayésienne
+            //Application de la règle bayésienne
 
-        //cout<<"Je suis dans segmentation"<<endl;
+            if (baye->regle_bayesienne(pixel)){
 
-        if (baye->regle_bayesienne(pixel)){
+                frameBlack.at<double>(i,j) = 1;
 
-            pix.val[0] = 1;
-            pix.val[1] = 0;
-            pix.val[2] = 0;
-
-            *it = pix;
-
-            cout<<"true"<<endl;
+            }
 
         }
-        else{
+    }
+    return frameBlack;
+}
 
-            //On met le pixel en noir
+int Traitement::findDirection(Mat frameBlack){
+    // la ligne suivante permet de récupérer le nombre de lignes de la matrice
+    int r;
+    r = frameBlack.rows;
 
-            pix.val[0] = 0;
-            pix.val[1] = 0;
-            pix.val[2] = 0;
+    // la ligne suivante permet de récupérer le nombre de colonnes de la matrice
+    int c;
+    c = frameBlack.cols;
 
-            //On l'insère dans l'image en noir et blanc
-            *it = pix;
 
-            cout<<"false"<<endl;
+    // On définit les 4 directions.
+    int haut = 0;
+    int gauche = 0;
+    int droite = 0;
+    int bas = 0;
+    int i;
+    int j;
+
+    // For imbriqué pour parcourrir la matrice
+    for (i = 0;i < r;i++)
+    {
+        for (j = 0; j < c;j++)
+        {
+            // On teste deux choses : si le point est dans la zone basse (c'est à dire si il est en dessous des deux diagonales) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
+
+            if ((i > r*j / c) && (i > -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
+            {
+                bas = bas + 1;
+            }
+            // On teste deux choses : si le point est dans la zone droite(c'est à dire si il est en dessous de la diagonale montante et au dessus de la diagonale descendante) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
+
+            if ((i < r*j / c) && (i > -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
+            {
+                droite = droite + 1;
+            }
+            // On teste deux choses : si le point est dans la zone haute (c'est à dire si il est au dessus des deux diagonales) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
+            if ((i < r*j / c) && (i < -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
+            {
+                haut = haut + 1;
+            }
+            // On teste deux choses : si le point est dans la zone gauche (c'est à dire si il est au dessus de la diagonale montante et en dessous de la diagonale descendante) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
+            if ((i > r*j / c) && (i < -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
+            {
+                gauche = gauche + 1;
+            }
         }
-
-
-        //cout<<"Valeur pixel YCbCr: "<<pix2.val[0]<<endl;
-        //cout <<"Valeur pixel Black: "<<pix3.val[0]<<endl;
-        cout<<"Valeur iterateur: "<<pix.val[0]<<endl;
-
-
     }
 
-    return frameBlack;
+    //Recherche de la direction en prenant le maximum entre les différentes directions
+    int tab[4] = {gauche, haut, droite, bas};
+
+    int max = tab[0];
+
+    for(int i = 0; i<4; i++){
+        if (tab[i]>max){
+            direction_ = i+1;
+        }
+    }
+
+    return direction_;
+}
+
+int Traitement::getDirection(){
+    return direction_;
 }
