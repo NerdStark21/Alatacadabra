@@ -3,7 +3,7 @@
 #include <QDebug>
 #include <qdebug.h>
 
-Model::Model()
+Model::Model(int dimension)
 {
     qDebug()<<"Création du model"<<endl;
 
@@ -12,8 +12,8 @@ Model::Model()
     int epaisseur = 5;
 
    // Dimension du plateau de jeu
-    width_=70;
-    heigth_=70;
+    width_=dimension;
+    heigth_=dimension;
 
     // Création des Rect des murs
     Rect coordUp(-cote/2, cote/2, cote, epaisseur);
@@ -52,23 +52,22 @@ void Model::update(){
 
 void Model::fruitEaten(){
 
-//    for(list<Fruit>::iterator it=fruits_.begin(); it!=fruits_.end(); ++i1){
-//        if( it->getPosition()== snake_.getBody().begin()->getCenter()){
-//            i
+    for(vector<Fruit>::iterator it=fruits_.begin(); it!=fruits_.end(); ++it){
+        if( it->getPosition()== snake_.getBody().begin()->getCenter()){
+            snake_.eatFruit();
+            fruits_.erase(it);
+            createFruit();
+        }
+
+
+
+//    for(Fruit f : fruits_){
+//        if( f.getPosition()== snake_.getBody().begin()->getCenter()){
 //            snake_.eatFruit();
-//            fruits_.erase(f);
 //            f.~Fruit();
 //            createFruit();
 //        }
-
-
-
-    for(Fruit f : fruits_){
-        if( f.getPosition()== snake_.getBody().begin()->getCenter()){
-            snake_.eatFruit();
-            f.~Fruit();
-            createFruit();
-        }
+//    }
     }
 }
 
@@ -128,7 +127,7 @@ void Model::intToDirection(int i){
 
 void Model::createFruit(){
     // Random point
-    Point position= Point(rand() % width_ ,rand() % heigth_ );
+    Point position= Point(2*(rand() % width_/2 - width_/4),2*(rand() % heigth_/2- heigth_/4) );
     Fruit cherry= Fruit(position);
     bool freeSpace=false;
     while(!freeSpace){

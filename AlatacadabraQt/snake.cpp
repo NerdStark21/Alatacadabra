@@ -11,6 +11,13 @@
 
 using namespace cv;
 
+/**
+ * @brief Snake::Snake
+ * @param width
+ * @param heigth
+ *
+ * The snake starts the game with 3 bodyparts [0,0],[0,-1],[0,-2], and can only acces the even positions.
+ */
 
 Snake::Snake(int width, int heigth)
 {
@@ -23,9 +30,9 @@ Snake::Snake(int width, int heigth)
     radius_=1;
 
     // Create the snake with 3 bodyparts
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)),true));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-2*radius_),false));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-4*radius_),false));
+    body_.push_back(BodyPart( Point(0,0),true));
+    body_.push_back(BodyPart( Point(0,-1),false));
+    body_.push_back(BodyPart( Point(0,-2),false));
 
     // Gestion des textures
 //    headImage_=QGLWidget::convertToGLFormat(QImage("../../faces/Olivier_Alata.jpg"));
@@ -57,6 +64,7 @@ Snake::Snake(int width, int heigth)
 
 void Snake::Display(){
     for(BodyPart b : body_){
+        qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
         b.Display(headImage_);
     }
 }

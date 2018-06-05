@@ -26,7 +26,7 @@ private:
 
 
 public:
-    Model();
+    Model(int dimension);
 
     void drawWalls();
     void drawGrid();

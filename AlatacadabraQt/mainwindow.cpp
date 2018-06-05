@@ -39,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent) :
     qDebug()<<"On a set le timer"<<endl;
 
     // Création du modèle
-    model_ = new Model();
+    int dimension=MAX_DIMENSION;
+    model_ = new Model(dimension);
 }
 
 void MainWindow::update(){
@@ -90,7 +91,7 @@ void MainWindow::paintGL()
 {
     // Reinitialisation des tampons
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+    glEnable(GL_DEPTH_TEST);
     // Definition de la matrice modelview
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
