@@ -19,6 +19,7 @@ private:
 
     int radius_;
     bool dead_;
+    bool fruitEaten_;
 
     QImage headImage_;
     Point topLeft_;
@@ -34,6 +35,8 @@ public:
     void eatFruit();
     void setDirection(Point p);
     list<BodyPart> getBody(){return body_;}
+    bool getFruitEaten();
+    void setFruitEaten(bool fruit);
 };
 
 #endif // SNAKE_H

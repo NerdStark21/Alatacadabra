@@ -75,7 +75,11 @@ void Snake::move(){
 
         BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_,true);
         body_.push_front(newPart);
-        body_.pop_back();
+        if(!fruitEaten_){
+            body_.pop_back();
+        }else{
+            fruitEaten_=false;
+        }
 
         //body_.back().setCenter(body_.front().getCenter()+direction_);
 
@@ -87,7 +91,8 @@ void Snake::move(){
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
-    body_.push_back(BodyPart(body_.back().getCenter(),false));
+    fruitEaten_=true;
+//    body_.push_back(BodyPart(body_.back().getCenter(),false));
 }
 
 // Returns a boolean : true if the snake shall die, false if not.
@@ -116,4 +121,12 @@ void Snake::setDirection(Point p){
     if(p!=-1*direction_){
         direction_=p;
     }
+}
+
+bool Snake::getFruitEaten(){
+    return fruitEaten_;
+}
+
+void Snake::setFruitEaten(bool fruit){
+    fruitEaten_=fruit;
 }
