@@ -40,7 +40,7 @@ Model::Model(int dimension)
 
 
 void Model::update(){
-    qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
+    //qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
     snake_.move();
     fruitEaten();
 }
@@ -128,6 +128,7 @@ void Model::intToDirection(int i){
 
 void Model::createFruit(){
     // Random point
+    qDebug()<<"Création de fruit"<<endl;
     Point position= Point(2*(rand() % width_/2 - width_/4),2*(rand() % heigth_/2- heigth_/4) );
     Fruit cherry= Fruit(position);
     bool freeSpace=false;
@@ -152,7 +153,6 @@ void Model::createFruit(){
         // Get another point
         position=Point(rand() % width_ ,rand() % heigth_ );
     }
-
     fruits_.push_back(cherry);
 }
 
