@@ -13,8 +13,9 @@ class Fruit
 {
 public:
     Fruit(){}
-    Fruit(Point position){position_ = position;}
-    ~Fruit(){gluDeleteQuadric(quadrique_);}
+    Fruit(Point position);
+
+    ~Fruit();
     void setPosition(Point p){position_ = p;}
     Point getPosition(){return position_;}
     void drawFruit();

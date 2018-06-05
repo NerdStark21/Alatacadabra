@@ -6,13 +6,14 @@
 //BodyPart::BodyPart(Point center, int radius)
 //    : center_(center), radius_(radius){}
 
-BodyPart::BodyPart(Point center){
+BodyPart::BodyPart(Point center,bool head){
     center_=center;
-    radius_=10;
+    radius_=1;
     ball_quadric_= gluNewQuadric();
+    head_=head;
 }
 
-void BodyPart::Display(){
+void BodyPart::Display(QImage headImage){
 
 //    qDebug()<<"Display de BodyPart"<<endl;
 
@@ -26,7 +27,6 @@ void BodyPart::Display(){
 
 
     // Couleur de l'objet
-
     GLfloat colorAmbiante[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};

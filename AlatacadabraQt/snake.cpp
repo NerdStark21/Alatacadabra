@@ -7,6 +7,8 @@
 //#include <opencv2/opencv.hpp>
 //#include <opencv2/core/core.hpp>
 
+#include <QGLWidget>
+
 using namespace cv;
 
 
@@ -16,32 +18,56 @@ Snake::Snake(int width, int heigth)
     topLeft_ = Point(0,0);
     bottomRight_=  Point(width,heigth);
 
-    // Create the snake with 1 bodypart
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2))));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-20)));
-    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-40)));
-
     size_=1;
     direction_=Point(0,1);
-    radius_=10;
+    radius_=1;
+
+    // Create the snake with 3 bodyparts
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)),true));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-2*radius_),false));
+    body_.push_back(BodyPart( Point(floor(width/2),floor(heigth/2)-4*radius_),false));
+
+    // Gestion des textures
+//    headImage_=QGLWidget::convertToGLFormat(QImage("../../faces/Olivier_Alata.jpg"));
+//    glGenTextures(1,GLuint* textures); // Tableau dans lequel on va stocker les textures générées
+//    // On définit la texture courante
+//    glBindTexture(GL_TEXTURE_2D,GLuint* texture);  // entier correspondant à la texture courante
+
+//    glTexImage2D(
+//    GL_TEXTURE_2D, // GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, …
+//    0, // niveau de détail de l’image, avec 0 on a l’image de base
+//    3, // nombre de composantes de couleurs par pixel (3 si RGB, 4 si RGBA, …)
+//    512, 512, // largeur de la texture (puissance de 2) et hauteur de la texture (puissance de 2)
+//    0, // toujours 0 d’apres les spécif
+//    GL_RGB, // format de stockage (GL_RGB, GL_RGBA, …)
+//    GL_UNSIGNED_BYTE, // type dans lequel sont stockées les composantes(GL_UNSIGNED_BYTE, GL_BYTE, GL_INT, …)
+//    GLvoid* data);  // adresse de la texture
+
+
+//    // On définit les paramètres de la texture courante
+//    glTexParameteri(
+//    GL_TEXTURE_2D, // GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, …
+//    GL_TEXTURE_MIN_FILTER, // paramètre auquel on va venir setter une valeur (GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, …)
+//    25); // valeur à setter
+
+
+
 
 }
 
 void Snake::Display(){
     for(BodyPart b : body_){
-        b.Display();
+        b.Display(headImage_);
     }
 }
 
 
 void Snake::move(){
     if(true/*!deadlyPlace()*/){
-        qDebug()<<"Position de Snake : "<<"["<<body_.front().getCenter().x<<" ; "<< body_.front().getCenter().y<<"]";
-//        qDebug()<<"  ["<<body_.
-        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_);
+
+        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_,true);
         body_.push_front(newPart);
         body_.pop_back();
-        qDebug()<<body_.size()<<endl;
 
         //body_.back().setCenter(body_.front().getCenter()+direction_);
 
@@ -53,7 +79,7 @@ void Snake::move(){
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
-    body_.push_back(BodyPart(body_.back().getCenter()));
+    body_.push_back(BodyPart(body_.back().getCenter(),false));
 }
 
 // Returns a boolean : true if the snake shall die, false if not.

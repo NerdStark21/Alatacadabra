@@ -6,7 +6,7 @@ using namespace cv;
 
 const unsigned int WIN_WIDTH  = 50;
 const unsigned int WIN_HEIGHT = 50;
-const float MAX_DIMENSION     = 200.0f;
+const float MAX_DIMENSION     = 70.0f;
 
 /*
 MainWindow::MainWindow(QWidget *parent) :
@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
         updateGL();
     });
 
-    m_AnimationTimer_.setInterval(1000);
+    m_AnimationTimer_.setInterval(200);
     m_AnimationTimer_.start();
 
 

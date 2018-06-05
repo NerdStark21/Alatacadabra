@@ -4,6 +4,7 @@
 #include "bodypart.h"
 #include <vector>
 #include <list>
+#include <QImage>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ private:
     int radius_;
     bool dead_;
 
+    QImage headImage_;
     Point topLeft_;
     Point bottomRight_;
 

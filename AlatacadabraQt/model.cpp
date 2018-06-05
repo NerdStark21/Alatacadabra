@@ -1,5 +1,7 @@
 #include "model.h"
 
+#include <QDebug>
+#include <qdebug.h>
 
 Model::Model()
 {
@@ -10,8 +12,8 @@ Model::Model()
     int epaisseur = 5;
 
    // Dimension du plateau de jeu
-    width_=50;
-    heigth_=50;
+    width_=70;
+    heigth_=70;
 
     // Création des Rect des murs
     Rect coordUp(-cote/2, cote/2, cote, epaisseur);
@@ -33,10 +35,12 @@ Model::Model()
 
     // Ajout du snake
     snake_=Snake(width_,heigth_);
+    createFruit();
 }
 
 
 void Model::update(){
+    qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
     snake_.move();
     fruitEaten();
 }
@@ -47,10 +51,23 @@ void Model::update(){
  */
 
 void Model::fruitEaten(){
+
+//    for(list<Fruit>::iterator it=fruits_.begin(); it!=fruits_.end(); ++i1){
+//        if( it->getPosition()== snake_.getBody().begin()->getCenter()){
+//            i
+//            snake_.eatFruit();
+//            fruits_.erase(f);
+//            f.~Fruit();
+//            createFruit();
+//        }
+
+
+
     for(Fruit f : fruits_){
         if( f.getPosition()== snake_.getBody().begin()->getCenter()){
             snake_.eatFruit();
             f.~Fruit();
+            createFruit();
         }
     }
 }
@@ -58,6 +75,7 @@ void Model::fruitEaten(){
 void Model::Display(){
     drawWalls();
     drawSnake();
+    drawFruits();
 }
 
 void Model::drawWalls(){
