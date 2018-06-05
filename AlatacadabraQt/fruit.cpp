@@ -28,6 +28,8 @@ void Fruit::drawFruit(){
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};
 
+    glColor3f(1.0, 0.0, 0.0);
+
     glMaterialfv(GL_FRONT, GL_AMBIENT, colorAmbiante);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, colorDiffuse);
     //glMaterialfv(GL_FRONT, GL_SPECULAR, colorSpeculaire_planet);
