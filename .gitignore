@@ -17,3 +17,5 @@ Apprentissage/build-Supervised_learning-Desktop_Qt_5_10_0_MinGW_32bit-Debug
 *.o
 faces/Thumbs.db
 *.db
+AlatacadabraQt/AlatacadabraQt.pro
+AlatacadabraQt/AlatacadabraQt.pro.user

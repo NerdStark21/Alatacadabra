@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <qdebug.h>
 #include <atomic>
+#include <QThread>
 #include "wall.h"
 #include "partie.h"
 #include "fruit.h"
@@ -16,7 +17,7 @@ using namespace cv;
 
 using namespace std;
 
-class Model
+class Model : public QThread
 {
 private:
     vector<Wall> walls_;

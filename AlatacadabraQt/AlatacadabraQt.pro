@@ -59,7 +59,8 @@ SOURCES += \
     skin.cpp \
     texture.cpp \
     traitement.cpp \
-    background.cpp
+    background.cpp \
+    threadmodel.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -73,7 +74,8 @@ HEADERS += \
     bayesien.h \
     skin.h \
     texture.h \
-    traitement.h
+    traitement.h \
+    threadmodel.h
 
 FORMS += \
         mainwindow.ui

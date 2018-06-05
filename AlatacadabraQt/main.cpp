@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <thread>
 #include <atomic>
+#include "threadmodel.h"
 
 using namespace std;
 
@@ -13,12 +13,15 @@ int main(int argc, char *argv[])
 {
     atomic<int> * deplacementPipeline(0);
 
+    ThreadModel * threadModel = new ThreadModel(deplacementPipeline, argc, argv);
+    threadModel->start();
+
+    /*
     QApplication a(argc, argv);
     MainWindow w(deplacementPipeline);
     w.show();
 
-    thread model(runModel, &a);
-    model.join();
+    a->exec();*/
 
     return 0;
 }
