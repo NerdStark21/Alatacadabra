@@ -22,13 +22,13 @@ void Texture::proba_priori(float proba)
 void Texture::vraisemblance(vector<float> pixel)
 {
 
-    // Y
+    // Calcul de la densité de probabilité en Y (loi normale N(mu,sigma))
     float Y = 1./sqrt(2*pow(sigma_.at(0),2) * M_PI) * exp(-0.5 * (pow((pixel.at(0) - mu_.at(0))/sigma_.at(0),2)));
 
-    // Cb
+    // Calcul de la densité de probabilité en Cb (loi normale N(mu,sigma))
     float Cb = 1./sqrt(2*pow(sigma_.at(1),2) * M_PI) * exp(-0.5 * (pow((pixel.at(1) - mu_.at(1))/sigma_.at(1),2)));
 
-    //Cr
+    // Calcul de la densité de probabilité en Cr (loi normale N(mu,sigma))
     float Cr = 1./sqrt(2*pow(sigma_.at(2),2) * M_PI) * exp(-0.5 * (pow((pixel.at(2) - mu_.at(2))/sigma_.at(2),2)));
 
 

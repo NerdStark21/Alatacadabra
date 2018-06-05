@@ -38,15 +38,11 @@ int main(int argc, char *argv[])
         frameCopy  = frame.clone();
         int direction = 0;
 
-
         if (i== 3){
-            //cout<<"En cours de traitement, ca prend environ 2 min..."<<endl;
             direction = traitement->Direction(frameCopy);
             cout<<"Direction = "<<direction<<endl;
-
         }
         i+=1;
-
 
         // affichage de la frame suivante
         imshow("WebCam", frame);
