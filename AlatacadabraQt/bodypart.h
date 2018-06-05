@@ -14,7 +14,7 @@ class BodyPart
 {
 private:
     Point center_;
-    int radius_;
+    float radius_;
     GLUquadric *ball_quadric_;
     bool head_;
 

@@ -4,9 +4,9 @@
 
 using namespace cv;
 
-const unsigned int WIN_WIDTH  = 50;
-const unsigned int WIN_HEIGHT = 50;
-const float MAX_DIMENSION     = 70.0f;
+const unsigned int WIN_WIDTH  = 10;
+const unsigned int WIN_HEIGHT = 10;
+const float MAX_DIMENSION     = 30.0f;
 
 /*
 MainWindow::MainWindow(QWidget *parent) :
@@ -61,6 +61,19 @@ void MainWindow::initializeGL()
 
     // Activation du zbuffer
     glEnable(GL_DEPTH_TEST);
+
+    //Réglage de la lumière
+
+    GLfloat color_ambient_light[] = {0.3f, 0.3f, 0.3f, 1.0};
+    glLightfv(GL_LIGHT0, GL_AMBIENT, color_ambient_light);
+
+    GLfloat color_diffuse_light[] = {0.8f, 0.8f, 0.8f, 1.0};
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, color_diffuse_light);
+
+    // Activation de la lumiere
+    glEnable(GL_LIGHTING);
+    glEnable(GL_LIGHT0);
+
 }
 
 
@@ -97,7 +110,7 @@ void MainWindow::paintGL()
     glLoadIdentity();
 
     // Caméra / Cible / Vecteur vertical
-    gluLookAt(0.0,0.0,10,
+    gluLookAt(0.0,0.0,10.0,
               0.0,0.0,0.0,
               0.0,1.0,0.0);
 
