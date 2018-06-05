@@ -63,8 +63,8 @@ Snake::Snake(int width, int heigth)
 }
 
 void Snake::Display(){
+    qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
     for(BodyPart b : body_){
-        qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
         b.Display(headImage_);
     }
 }

@@ -39,7 +39,7 @@ void BodyPart::Display(QImage headImage){
 
 
     // Affichage de la quadrique
-    gluSphere(ball_quadric_, radius_, 50.0, 50.0);
+    gluSphere(ball_quadric_, radius_, 100.0, 100.0);
 
 
     glPopMatrix();

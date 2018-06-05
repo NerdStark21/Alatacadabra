@@ -37,7 +37,7 @@ void Fruit::drawFruit(){
 
     // Affichage de la quadrique
 
-    gluSphere(quadrique_, radius_, 100, 100); //On dessine la quadrique
+    gluSphere(quadrique_, radius_, 100.0, 100.0); //On dessine la quadrique
     glPopMatrix();
 
 }

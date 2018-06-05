@@ -75,6 +75,7 @@ void Model::Display(){
     drawWalls();
     drawSnake();
     drawFruits();
+
 }
 
 void Model::drawWalls(){
