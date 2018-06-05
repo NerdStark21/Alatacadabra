@@ -40,8 +40,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Création du modèle
     model_ = new Model();
-    // Création de la classe de détection
-    detection_ = new Detection();
 }
 
 void MainWindow::update(){

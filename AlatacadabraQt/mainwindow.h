@@ -4,7 +4,6 @@
 #include <QMainWindow>
 //#include "ui_mainwindow.h"
 #include "model.h"
-#include "detection.h"
 
 class MainWindow : public QGLWidget
 {
@@ -34,7 +33,6 @@ private:
     Model* model_;
     float m_TimeElapsed { 0.0f };
     QTimer m_AnimationTimer_;
-    Detection* detection_;
 
     /*
 private:

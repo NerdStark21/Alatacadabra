@@ -53,9 +53,13 @@ SOURCES += \
     snake.cpp \
     wall.cpp\
     model.cpp \
-    detection.cpp \
     bodypart.cpp \
-    fruit.cpp
+    fruit.cpp \
+    bayesien.cpp \
+    skin.cpp \
+    texture.cpp \
+    traitement.cpp \
+    background.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -63,9 +67,13 @@ HEADERS += \
     model.h \
     wall.h\
     snake.h \
-    detection.h \
     bodypart.h \
-    fruit.h
+    fruit.h \
+    background.h \
+    bayesien.h \
+    skin.h \
+    texture.h \
+    traitement.h
 
 FORMS += \
         mainwindow.ui
