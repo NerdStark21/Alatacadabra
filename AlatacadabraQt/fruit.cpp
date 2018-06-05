@@ -17,8 +17,8 @@ void Fruit::drawFruit(){
 
     int R_,V_,B_;
     R_=100;
-    V_=100;
-    B_=100;
+    V_=0;
+    B_=0;
     glPushMatrix();
     glTranslated(position_.x,position_.y,0);
 

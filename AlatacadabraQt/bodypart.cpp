@@ -8,7 +8,7 @@
 
 BodyPart::BodyPart(Point center,bool head){
     center_=center;
-    radius_=1;
+    radius_=1.5;
     ball_quadric_= gluNewQuadric();
     head_=head;
 }

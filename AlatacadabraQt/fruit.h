@@ -22,7 +22,7 @@ public:
 
 private:
     Point position_;
-    int radius_ = 1;
+    float radius_ = 1.5;
     GLUquadric* quadrique_;
 };
 
