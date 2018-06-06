@@ -15,18 +15,20 @@ class Fruit
 {
 public:
     Fruit(){}
-    Fruit(Point position, QString path);
-
+    Fruit(Point position, QString path, int randomImg);
     ~Fruit();
     void setPosition(Point p){position_ = p;}
     Point getPosition(){return position_;}
     void drawFruit();
+    QString getPath();
+    int getRandomImg();
 
 private:
     Point position_;
     float radius_ = 1.5;
     GLUquadric* quadrique_;
     QString path_;
+    int randomImg_;
 };
 
 #endif // FRUIT_H

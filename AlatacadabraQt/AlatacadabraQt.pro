@@ -80,5 +80,7 @@ FORMS += \
 
 INCLUDEPATH +=$$(OPENCV_DIR)\..\..\include
 
+
 RESOURCES += \
     textures.qrc
+

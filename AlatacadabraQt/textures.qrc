@@ -1,3 +1,4 @@
+
 <RCC>
     <qresource prefix="/">
         <file>../faces/Alata1.jpg</file>
@@ -12,3 +13,5 @@
         <file>../faces/Tocard5.jpg</file>
     </qresource>
 </RCC>
+
+

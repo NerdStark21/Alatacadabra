@@ -32,11 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
         updateGL();
     });
 
-    m_AnimationTimer_.setInterval(200);
+    m_AnimationTimer_.setInterval(100);
     m_AnimationTimer_.start();
-
-
-    qDebug()<<"On a set le timer"<<endl;
 
     // Création du modèle
     int dimension=MAX_DIMENSION;
@@ -55,7 +52,6 @@ MainWindow::~MainWindow(){
 // Fonction d'initialisation
 void MainWindow::initializeGL()
 {
-    qDebug()<<"On initialise le GL"<<endl;
     // Reglage de la couleur de fond
     glClearColor(15, 15, 15, 1);
 
@@ -79,32 +75,32 @@ void MainWindow::initializeGL()
     glEnable(GL_TEXTURE_2D);
 
     //Stockage des emplacements de texture
-    m_TextureID_ = new GLuint[6];
+    m_TextureID_ = new GLuint[7];
 
     //Stockage des images
-    img_plan_ = new QImage[6];
+    img_plan_ = new QImage[7];
 
     //Association des emplacements avec les images
-    glGenTextures(6, m_TextureID_);
+    glGenTextures(7, m_TextureID_);
 
     //Pour le snake
     QImage img;
-    if(!img.load(model_->snake_.getPath()))
+     if(!img.load(model_->getSnake().getPath()))
     {
-        std::cout<<"error"<<i<<endl;
+        std::cout<<"error snake"<<endl;
     }
 
-    img_plan_[0] = QGLWidget :: convertToGLFormat(img);
+    img_plan_[6] = QGLWidget :: convertToGLFormat(img);
 
     //Pour les fruits
-    int i;
-    for (i=1;i<6; i++){
+    for (Fruit f : model_->getFruits()){
+        int i = f.getRandomImg();
+        cout<<i<<endl;
         QImage img;
-        if(!img.load(model_->fruits_->getPath()))
+        if(!img.load(f.getPath()))
         {
-            std::cout<<"error moon"<<endl;
+            std::cout<<"error fruits"<<endl;
         }
-
         img_plan_[i] = QGLWidget:: convertToGLFormat(img);
     }
 
@@ -149,17 +145,17 @@ void MainWindow::paintGL()
               0.0,1.0,0.0);
 
     //Affichage de la texture du Snake
-    glBindTexture( GL_TEXTURE_2D, m_TextureID_[0]);
-    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[0].width(), img_plan_[0].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[0].bits());
+    glBindTexture( GL_TEXTURE_2D, m_TextureID_[6]);
+    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[6].width(), img_plan_[6].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[6].bits());
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    model_->snake_.Display();
+    //model_->snake_.Display();
 
 
     //Affichage des textures des fruits
-    int i;
-    for (i = 1; i < 6; i++)
+    for (Fruit f : model_->getFruits())
     {
+        int i = f.getRandomImg();
         glBindTexture( GL_TEXTURE_2D, m_TextureID_[i]);
         glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[i].width(), img_plan_[i].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[i].bits());
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -174,13 +170,13 @@ void MainWindow::paintGL()
 
 void MainWindow::keyPressEvent(QKeyEvent * event)
 {
-    cout<<"on entre dans key press event"<<endl;
+    //cout<<"on entre dans key press event"<<endl;
     switch(event->key())
     {
 
     case Qt::Key_Left:
     {
-        cout<<"Left key"<<endl;
+        //cout<<"Left key"<<endl;
         model_->setSnakeDirection(Point(-1,0));
         break;
     }
@@ -188,7 +184,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
     case Qt::Key_Right:
     {
 
-        cout<<"Right key"<<endl;
+        //cout<<"Right key"<<endl;
         model_->setSnakeDirection(Point(1,0));
         break;
     }
@@ -196,7 +192,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
     case Qt::Key_Down:
     {
 
-        cout<<"Down key"<<endl;
+        //cout<<"Down key"<<endl;
         model_->setSnakeDirection(Point(0,-1));
         break;
     }
@@ -204,7 +200,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 
     case Qt::Key_Up:
     {
-        cout<<"Up key"<<endl;
+        //cout<<"Up key"<<endl;
         model_->setSnakeDirection(Point(0,1));
         break;
     }

@@ -34,13 +34,25 @@ Model::Model(int dimension)
     walls_.push_back(wallRight);
 
     // Ajout du snake
-    snake_=Snake(width_,heigth_, QString("/../faces/Alata1.jpg"));
+    snake_=Snake(width_,heigth_, QString(":/../faces/Alata1.jpg"));
+
+
+    //Ajout des chemins
+    pathsFruit_.push_back(QString(":/../faces/Tocard1.jpg"));
+    pathsFruit_.push_back(QString(":/../faces/Tocard2.jpg"));
+    pathsFruit_.push_back(QString(":/../faces/Tocard3.jpg"));
+    pathsFruit_.push_back(QString(":/../faces/Tocard4.jpg"));
+    pathsFruit_.push_back(QString(":/../faces/Tocard5.jpg"));
+
+    //Initialisation du nombre aléatoire permettant de mettre aléatoirement des images sur les fruits
+    random_img_fruit_ = 0;
+
     createFruit();
 }
 
 
 void Model::update(){
-    qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
+    //qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
     snake_.move();
     fruitEaten();
 }
@@ -128,8 +140,17 @@ void Model::intToDirection(int i){
 
 void Model::createFruit(){
     // Random point
+    qDebug()<<"Création de fruit"<<endl;
     Point position= Point(2*(rand() % width_/2 - width_/4),2*(rand() % heigth_/2- heigth_/4) );
-    Fruit cherry= Fruit(position);
+
+    //Choix au hasard de l'image à mettre sur le fruit :
+    random_img_fruit_ = rand()%4;
+
+    QString path = pathsFruit_.at(random_img_fruit_);
+    cout<<"Path réussi"<<endl;
+
+    Fruit cherry= Fruit(position, path, random_img_fruit_);
+
     bool freeSpace=false;
     while(!freeSpace){
         freeSpace=true;
@@ -152,12 +173,18 @@ void Model::createFruit(){
         // Get another point
         position=Point(rand() % width_ ,rand() % heigth_ );
     }
-
     fruits_.push_back(cherry);
 }
 
 
+vector<Fruit> Model::getFruits(){
+    return fruits_;
+}
+Snake Model::getSnake(){
+    return snake_;
+}
 
 
-
-
+int Model::getRandomImgFruit(){
+    return random_img_fruit_;
+}

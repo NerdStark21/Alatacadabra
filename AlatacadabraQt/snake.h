@@ -19,6 +19,7 @@ private:
 
     int radius_;
     bool dead_;
+    bool fruitEaten_;
 
     QString headImage_;
     Point topLeft_;
@@ -35,6 +36,9 @@ public:
     void setDirection(Point p);
     list<BodyPart> getBody(){return body_;}
     QString getPath();
+    bool getFruitEaten();
+    void setFruitEaten(bool fruit);
+
 };
 
 #endif // SNAKE_H

@@ -23,6 +23,8 @@ private:
     Snake snake_;
     int width_;
     int heigth_;
+    vector<QString> pathsFruit_;
+    int random_img_fruit_;
 
 
 public:
@@ -38,6 +40,9 @@ public:
     void createFruit();
     void update();
     void fruitEaten();
+    int getRandomImgFruit();
+    vector<Fruit> getFruits();
+    Snake getSnake();
 };
 
 #endif // MODEL_H

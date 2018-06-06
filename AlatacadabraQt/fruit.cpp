@@ -1,10 +1,12 @@
 #include "fruit.h"
+#include <qdebug.h>
 
 
-Fruit::Fruit(Point position, QString path){
+Fruit::Fruit(Point position, QString path, int randomImg){
     quadrique_=gluNewQuadric();
     position_=position;
     path_ = path;
+    randomImg_ = randomImg;
 }
 
 Fruit::~Fruit(){
@@ -15,12 +17,13 @@ Fruit::~Fruit(){
 
 void Fruit::drawFruit(){
     // Affichage de la quadrique
-
+    qDebug()<<"Affichage du fruit"<<endl;
     int R_,V_,B_;
     R_=100;
     V_=0;
     B_=0;
     glPushMatrix();
+    qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
 
 
@@ -42,4 +45,12 @@ void Fruit::drawFruit(){
     gluSphere(quadrique_, radius_, 100.0, 100.0); //On dessine la quadrique
     glPopMatrix();
 
+}
+
+QString Fruit::getPath(){
+    return path_;
+}
+
+int Fruit::getRandomImg(){
+    return randomImg_;
 }

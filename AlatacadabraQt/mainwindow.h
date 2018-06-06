@@ -33,6 +33,8 @@ private:
     Model* model_;
     float m_TimeElapsed { 0.0f };
     QTimer m_AnimationTimer_;
+    GLuint * m_TextureID_;
+    QImage * img_plan_;
 
     /*
 private:
