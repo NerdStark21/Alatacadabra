@@ -79,3 +79,6 @@ FORMS += \
         mainwindow.ui
 
 INCLUDEPATH +=$$(OPENCV_DIR)\..\..\include
+
+RESOURCES += \
+    textures.qrc

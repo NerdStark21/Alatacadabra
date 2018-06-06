@@ -59,6 +59,7 @@ void MainWindow::initializeGL()
     // Reglage de la couleur de fond
     glClearColor(15, 15, 15, 1);
 
+
     // Activation du zbuffer
     glEnable(GL_DEPTH_TEST);
 
@@ -73,6 +74,39 @@ void MainWindow::initializeGL()
     // Activation de la lumiere
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
+
+    //Activation des textures
+    glEnable(GL_TEXTURE_2D);
+
+    //Stockage des emplacements de texture
+    m_TextureID_ = new GLuint[6];
+
+    //Stockage des images
+    img_plan_ = new QImage[6];
+
+    //Association des emplacements avec les images
+    glGenTextures(6, m_TextureID_);
+
+    //Pour le snake
+    QImage img;
+    if(!img.load(model_->snake_.getPath()))
+    {
+        std::cout<<"error"<<i<<endl;
+    }
+
+    img_plan_[0] = QGLWidget :: convertToGLFormat(img);
+
+    //Pour les fruits
+    int i;
+    for (i=1;i<6; i++){
+        QImage img;
+        if(!img.load(model_->fruits_->getPath()))
+        {
+            std::cout<<"error moon"<<endl;
+        }
+
+        img_plan_[i] = QGLWidget:: convertToGLFormat(img);
+    }
 
 }
 
@@ -113,6 +147,26 @@ void MainWindow::paintGL()
     gluLookAt(0.0,0.0,10.0,
               0.0,0.0,0.0,
               0.0,1.0,0.0);
+
+    //Affichage de la texture du Snake
+    glBindTexture( GL_TEXTURE_2D, m_TextureID_[0]);
+    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[0].width(), img_plan_[0].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[0].bits());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    model_->snake_.Display();
+
+
+    //Affichage des textures des fruits
+    int i;
+    for (i = 1; i < 6; i++)
+    {
+        glBindTexture( GL_TEXTURE_2D, m_TextureID_[i]);
+        glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[i].width(), img_plan_[i].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[i].bits());
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        //m_Planetes[i]->Display(m_TimeElapsed);
+    }
 
     // On va dessiner tous les murs
     model_->Display();
@@ -155,7 +209,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
         break;
     }
 
-    // Activation/Arret de l'animation
+        // Activation/Arret de l'animation
     case Qt::Key_Space:
     {
         if(m_AnimationTimer_.isActive())
@@ -172,7 +226,7 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
         break;
     }
 
-    // Cas par defaut
+        // Cas par defaut
     default:
     {
         // Ignorer l'evenement

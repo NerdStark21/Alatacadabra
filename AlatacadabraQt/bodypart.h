@@ -17,13 +17,16 @@ private:
     float radius_;
     GLUquadric *ball_quadric_;
     bool head_;
+    QString headImage_;
 
 public:
-    BodyPart(Point center,bool head);
+    BodyPart(Point center, bool head, QString headImage);
     BodyPart(){}
-    void Display(QImage headImage);
+    void Display(QString headImage);
     Point getCenter(){return center_;}
     void setCenter(Point p){center_ = p;}
+    bool getHead();
+    void setHead(bool head);
 };
 
 

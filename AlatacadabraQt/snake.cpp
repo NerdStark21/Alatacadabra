@@ -19,20 +19,20 @@ using namespace cv;
  * The snake starts the game with 3 bodyparts [0,0],[0,-1],[0,-2], and can only acces the even positions.
  */
 
-Snake::Snake(int width, int heigth)
+Snake::Snake(int width, int heigth, QString HeadImage)
 {
     // Limits of the playground
     topLeft_ = Point(0,0);
     bottomRight_=  Point(width,heigth);
-
+    headImage_ = HeadImage;
     size_=1;
     direction_=Point(0,1);
     radius_=1;
 
     // Create the snake with 3 bodyparts
-    body_.push_back(BodyPart( Point(0,0),true));
-    body_.push_back(BodyPart( Point(0,-1),false));
-    body_.push_back(BodyPart( Point(0,-2),false));
+    body_.push_back(BodyPart( Point(0,0),true, headImage_));
+    body_.push_back(BodyPart( Point(0,-1),false, headImage_));
+    body_.push_back(BodyPart( Point(0,-2),false, headImage_));
 
     // Gestion des textures
 //    headImage_=QGLWidget::convertToGLFormat(QImage("../../faces/Olivier_Alata.jpg"));
@@ -73,7 +73,8 @@ void Snake::Display(){
 void Snake::move(){
     if(true/*!deadlyPlace()*/){
 
-        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_,true);
+        body_.front().setHead(false);
+        BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_,true, headImage_);
         body_.push_front(newPart);
         body_.pop_back();
 
@@ -87,7 +88,7 @@ void Snake::move(){
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
-    body_.push_back(BodyPart(body_.back().getCenter(),false));
+    body_.push_back(BodyPart(body_.back().getCenter(),false, headImage_));
 }
 
 // Returns a boolean : true if the snake shall die, false if not.
@@ -116,4 +117,8 @@ void Snake::setDirection(Point p){
     if(p!=-1*direction_){
         direction_=p;
     }
+}
+
+QString Snake::getPath(){
+    return headImage_;
 }

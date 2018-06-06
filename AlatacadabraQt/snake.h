@@ -20,13 +20,13 @@ private:
     int radius_;
     bool dead_;
 
-    QImage headImage_;
+    QString headImage_;
     Point topLeft_;
     Point bottomRight_;
 
 public:
     Snake(){}
-    Snake(int width, int heigth);
+    Snake(int width, int heigth, QString HeadImage);
     void drawNode();
     void Display();
     void move();
@@ -34,6 +34,7 @@ public:
     void eatFruit();
     void setDirection(Point p);
     list<BodyPart> getBody(){return body_;}
+    QString getPath();
 };
 
 #endif // SNAKE_H

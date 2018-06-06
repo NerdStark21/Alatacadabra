@@ -1,9 +1,10 @@
 #include "fruit.h"
 
 
-Fruit::Fruit(Point position){
+Fruit::Fruit(Point position, QString path){
     quadrique_=gluNewQuadric();
     position_=position;
+    path_ = path;
 }
 
 Fruit::~Fruit(){
@@ -37,6 +38,7 @@ void Fruit::drawFruit(){
 
     // Affichage de la quadrique
 
+    gluQuadricTexture(quadrique_,GL_TRUE);
     gluSphere(quadrique_, radius_, 100.0, 100.0); //On dessine la quadrique
     glPopMatrix();
 

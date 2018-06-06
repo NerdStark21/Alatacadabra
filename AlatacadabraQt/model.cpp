@@ -34,7 +34,7 @@ Model::Model(int dimension)
     walls_.push_back(wallRight);
 
     // Ajout du snake
-    snake_=Snake(width_,heigth_);
+    snake_=Snake(width_,heigth_, QString("/../faces/Alata1.jpg"));
     createFruit();
 }
 
