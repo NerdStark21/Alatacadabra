@@ -39,6 +39,12 @@ MainWindow::MainWindow(QWidget *parent) :
     int dimension=MAX_DIMENSION;
     model_ = new Model(dimension);
 
+    //Stockage des emplacements de texture
+    m_TextureID_ = new GLuint[7];
+
+    //Stockage des images
+    img_plan_ = new QImage[7];
+
 }
 
 void MainWindow::update(){
@@ -46,9 +52,9 @@ void MainWindow::update(){
 
     //model_->update(traitement_.getDirection());
 
-//    if(model_->getSnake().getDead()){
-//        model_=new Model(MAX_DIMENSION);
-//    }
+    //    if(model_->getSnake().getDead()){
+    //        model_=new Model(MAX_DIMENSION);
+    //    }
 }
 
 
@@ -80,12 +86,6 @@ void MainWindow::initializeGL()
 
     //Activation des textures
     glEnable(GL_TEXTURE_2D);
-
-    //Stockage des emplacements de texture
-    m_TextureID_ = new GLuint[7];
-
-    //Stockage des images
-    img_plan_ = new QImage[7];
 
     //Association des emplacements avec les images
     glGenTextures(7, m_TextureID_);
@@ -282,5 +282,5 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 }
 
 Model* MainWindow::getModel(){
-
+    return model_;
 }

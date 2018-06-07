@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
         frameCopy  = frame.clone();
         int direction = 0;
 
-        if (i== 3){
+        if (i%2 == 0){
             direction = traitement->Direction(frameCopy);
             cout<<"Direction = "<<direction<<endl;
         }

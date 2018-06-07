@@ -390,7 +390,8 @@ debug/main.o: ../Supervised_learning/main.cpp ../Supervised_learning/mainwindow.
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/imgproc/types_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/core/core_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui.hpp \
-		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h
+		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/core.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\Supervised_learning\main.cpp
 
 debug/mainwindow.o: ../Supervised_learning/mainwindow.cpp ../Supervised_learning/mainwindow.h \
@@ -500,45 +501,7 @@ debug/mainwindow.o: ../Supervised_learning/mainwindow.cpp ../Supervised_learning
 		C:/Qt/5.10.0/mingw53_32/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.10.0/mingw53_32/include/QtGui/qicon.h \
-		ui_mainwindow.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QApplication \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QToolBar \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/5.10.0/mingw53_32/include/QtWidgets/QWidget
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\Supervised_learning\mainwindow.cpp
 
 debug/skin.o: ../Supervised_learning/skin.cpp ../Supervised_learning/skin.h \
@@ -701,7 +664,8 @@ debug/traitement.o: ../Supervised_learning/traitement.cpp ../Supervised_learning
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/imgproc/types_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/core/core_c.h \
 		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui.hpp \
-		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h
+		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/highgui/highgui_c.h \
+		C:/opencv2/opencv-2.4.13.5/build/install/include/opencv2/core.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\traitement.o ..\Supervised_learning\traitement.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

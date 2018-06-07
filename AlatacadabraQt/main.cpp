@@ -15,26 +15,28 @@ int main(int argc, char *argv[])
     // Lancement de la vidéo
     Mat frame, frameCopy;
     int i = 0;
+    //Model *model = w.getModel();
     while (waitKey(5)<0)
     {
 
         //Prendre une frame de la webcam
         traitement->getVideoCapture() >> frame;
 
-//        //Effet mirroir
+        //Effet mirroir
         cv::flip(frame, frame, 1);
 
-//        //copie de la frame pour la traiter en parallèle
+        //copie de la frame pour la traiter en parallèle
         frameCopy  = frame.clone();
         int direction = 0;
 
-        if (i== 3){
+        if (i%2 == 0){
+            cout<<"On est avant traitement"<<endl;
             direction = traitement->Direction(frameCopy);
-//            w.getModel()->intToDirection(direction);
+             w.getModel()->intToDirection(direction);
         }
-        i+=1;
+        i++;
 
-//        // affichage de la frame suivante
+        // affichage de la frame suivante
         imshow("WebCam", frame);
 
     }
