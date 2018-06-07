@@ -83,16 +83,17 @@ void MainWindow::initializeGL()
     //Association des emplacements avec les images
     glGenTextures(7, m_TextureID_);
 
-    //Pour le snake
+
+    //Chargement de l'image pour le snake
     QImage img;
-     if(!img.load(model_->getSnake().getPath()))
+    if(!img.load(model_->getSnake().getPath()))
     {
         std::cout<<"error snake"<<endl;
     }
 
-    img_plan_[6] = QGLWidget :: convertToGLFormat(img);
+    img_plan_[5] = QGLWidget :: convertToGLFormat(img);
 
-    //Pour les fruits
+    //Chargement des images pour les fruits
     for (Fruit f : model_->getFruits()){
         int i = f.getRandomImg();
         cout<<i<<endl;
@@ -145,11 +146,13 @@ void MainWindow::paintGL()
               0.0,1.0,0.0);
 
     //Affichage de la texture du Snake
-    glBindTexture( GL_TEXTURE_2D, m_TextureID_[6]);
-    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[6].width(), img_plan_[6].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[6].bits());
+    glBindTexture( GL_TEXTURE_2D, m_TextureID_[5]);
+    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[5].width(), img_plan_[5].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[5].bits());
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    //model_->snake_.Display();
+
+    // On va dessiner tous les murs et le snake
+    model_->Display();
 
 
     //Affichage des textures des fruits
@@ -161,11 +164,9 @@ void MainWindow::paintGL()
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        //m_Planetes[i]->Display(m_TimeElapsed);
+        f.drawFruit();
     }
 
-    // On va dessiner tous les murs
-    model_->Display();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent * event)

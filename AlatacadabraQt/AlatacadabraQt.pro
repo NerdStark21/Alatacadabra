@@ -82,5 +82,5 @@ INCLUDEPATH +=$$(OPENCV_DIR)\..\..\include
 
 
 RESOURCES += \
-    textures.qrc
+    faces/textures.qrc
 

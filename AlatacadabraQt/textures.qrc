@@ -1,17 +1,11 @@
-
 <RCC>
     <qresource prefix="/">
-        <file>../faces/Alata1.jpg</file>
-        <file>../faces/Alata2.jpg</file>
-        <file>../faces/Alata3.jpg</file>
-        <file>../faces/Alata4.jpg</file>
-        <file>../faces/fftAlata1.png</file>
-        <file>../faces/Tocard1.jpg</file>
-        <file>../faces/Tocard2.jpg</file>
-        <file>../faces/Tocard3.jpg</file>
-        <file>../faces/Tocard4.jpg</file>
-        <file>../faces/Tocard5.jpg</file>
+        <file>faces/Alata1.jpg</file>
+        <file>faces/fftAlata1.png</file>
+        <file>faces/Tocard1.jpg</file>
+        <file>faces/Tocard2.jpg</file>
+        <file>faces/Tocard3.jpg</file>
+        <file>faces/Tocard4.jpg</file>
+        <file>faces/Tocard5.jpg</file>
     </qresource>
 </RCC>
-
-

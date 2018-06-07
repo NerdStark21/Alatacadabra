@@ -24,8 +24,9 @@ void BodyPart::Display(QString headImage){
     B_=100;
     glPushMatrix();
     glTranslated(center_.x,center_.y,0);
-
-
+    glRotated(40,0,1,0);
+    glRotated(-45,0,0,1);
+    glRotated(-65,1,0,0);
     // Couleur de l'objet
     GLfloat colorAmbiante[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
@@ -41,8 +42,12 @@ void BodyPart::Display(QString headImage){
     // Affichage de la quadrique
 
     //Si c'est la tête, affichage de la texture
-    if (head_){
+    if (head_)
+    {
         gluQuadricTexture(ball_quadric_,GL_TRUE);
+    }
+    else{
+        gluQuadricTexture(ball_quadric_,GL_FALSE);
     }
 
     gluSphere(ball_quadric_, radius_, 100.0, 100.0);

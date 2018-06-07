@@ -26,13 +26,16 @@ void Fruit::drawFruit(){
     qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
 
+    glRotated(40,0,1,0);
+    glRotated(-45,0,0,1);
+    glRotated(-65,1,0,0);
 
     // Couleur de l'objet
     GLfloat colorAmbiante[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};
 
-    glColor3f(1.0, 0.0, 0.0);
+    glColor3f(0.5, 0.0, 0.0);
 
     glMaterialfv(GL_FRONT, GL_AMBIENT, colorAmbiante);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, colorDiffuse);
