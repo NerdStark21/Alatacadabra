@@ -10,6 +10,7 @@ Fruit::Fruit(Point position, QString path, int randomImg){
 }
 
 Fruit::~Fruit(){
+    qDebug()<<"destruction de la quadrique"<<endl;
     gluDeleteQuadric(quadrique_);
 }
 
