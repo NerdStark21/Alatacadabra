@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Connexion du timer
     connect(&m_AnimationTimer_,  &QTimer::timeout, [&] {
-        this->update(traitement_->getDirection());
+        this->update();
         updateGL();
     });
 
@@ -39,12 +39,10 @@ MainWindow::MainWindow(QWidget *parent) :
     int dimension=MAX_DIMENSION;
     model_ = new Model(dimension);
 
-    // Création de la partie traitement
-    traitement_=new Traitement();
 }
 
-void MainWindow::update(int direction){
-    model_->update(direction);
+void MainWindow::update(){
+    model_->update();
 
     //model_->update(traitement_.getDirection());
 
@@ -244,5 +242,9 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 
     // Acceptation de l'evenement et mise a jour de la scene
     event->accept();
+
+}
+
+Model* MainWindow::getModel(){
 
 }

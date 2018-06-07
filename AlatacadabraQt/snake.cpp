@@ -22,8 +22,8 @@ using namespace cv;
 Snake::Snake(int width, int heigth, QString HeadImage)
 {
     // Limits of the playground
-    topLeft_ = Point(-width,heigth);
-    bottomRight_=  Point(width,-heigth);
+    topLeft_ = Point(-29,21);
+    bottomRight_=  Point(width,-21);
     headImage_ = HeadImage;
     size_=1;
     direction_=Point(0,1);

@@ -14,7 +14,8 @@ public:
     //explicit MainWindow(QWidget *parent = 0);
     MainWindow(QWidget * parent = nullptr);
     ~MainWindow();
-    void update(int direction);
+    void update();
+    Model* getModel();
 
 protected:
     // Fonction d'initialisation
@@ -28,6 +29,8 @@ protected:
 
     void keyPressEvent(QKeyEvent * event);
 
+
+
 private:
     int width_;
     int height_;
@@ -36,7 +39,6 @@ private:
     QTimer m_AnimationTimer_;
     GLuint * m_TextureID_;
     QImage * img_plan_;
-    Traitement* traitement_;
 
     /*
 private:
