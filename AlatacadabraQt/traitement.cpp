@@ -164,23 +164,23 @@ int Traitement::findDirection(Mat frameBlack){
 
             if ((i > r*j / c) && (i > -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
             {
-                bas = bas + 1;
+                bas++;
             }
             // On teste deux choses : si le point est dans la zone droite(c'est à dire si il est en dessous de la diagonale montante et au dessus de la diagonale descendante) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
 
             if ((i < r*j / c) && (i > -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
             {
-                droite = droite + 1;
+                droite++;
             }
             // On teste deux choses : si le point est dans la zone haute (c'est à dire si il est au dessus des deux diagonales) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
             if ((i < r*j / c) && (i < -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
             {
-                haut = haut + 1;
+                haut++;
             }
             // On teste deux choses : si le point est dans la zone gauche (c'est à dire si il est au dessus de la diagonale montante et en dessous de la diagonale descendante) et si il est égal à 1 (c'est à dire, il y a une partie de la main ici).
             if ((i > r*j / c) && (i < -(r*j / c) + r) && (frameBlack.at<double>(i, j) == 1))
             {
-                gauche = gauche + 1;
+                gauche++;
             }
         }
     }
@@ -188,12 +188,22 @@ int Traitement::findDirection(Mat frameBlack){
     //Recherche de la direction en prenant le maximum entre les différentes directions
     int tab[4] = {gauche, haut, droite, bas};
 
+    int min = tab[0];
     int max = tab[0];
+    direction_ = 1;
 
-    for(int i = 0; i<4; i++){
+    for(int i = 1; i < 4; i++){
         if (tab[i]>max){
             direction_ = i+1;
+            max = tab[i];
         }
+        if (tab[i] < min) {
+            min = tab[i];
+        }
+    }
+
+    if (max < r * c / 20 || max - min < r * c / 10) {
+        return 0;
     }
 
     return direction_;
