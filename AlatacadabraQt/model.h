@@ -27,6 +27,7 @@ private:
     int random_img_fruit_;
 
 
+
 public:
     Model(int dimension);
 
