@@ -5,7 +5,6 @@
 #include "bayesien.h"
 #include "background.h"
 #include "skin.h"
-#include "mainwindow.h"
 
 #include <QApplication>
 #include "opencv2/video/tracking.hpp"

@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Connexion du timer
     connect(&m_AnimationTimer_,  &QTimer::timeout, [&] {
-        this->update();
+        this->update(traitement_->getDirection());
         updateGL();
     });
 
@@ -38,10 +38,19 @@ MainWindow::MainWindow(QWidget *parent) :
     // Création du modèle
     int dimension=MAX_DIMENSION;
     model_ = new Model(dimension);
+
+    // Création de la partie traitement
+    traitement_=new Traitement();
 }
 
-void MainWindow::update(){
-    model_->update();
+void MainWindow::update(int direction){
+    model_->update(direction);
+
+    //model_->update(traitement_.getDirection());
+
+//    if(model_->getSnake().getDead()){
+//        model_=new Model(MAX_DIMENSION);
+//    }
 }
 
 

@@ -3,6 +3,7 @@
 
 int main(int argc, char *argv[])
 {
+    // Initialisation du temps pour avoir des valeurs aléatoires.
     srand (time(NULL));
 
     QApplication a(argc, argv);

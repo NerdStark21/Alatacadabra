@@ -4,6 +4,7 @@
 #include <QMainWindow>
 //#include "ui_mainwindow.h"
 #include "model.h"
+#include "traitement.h"
 
 class MainWindow : public QGLWidget
 {
@@ -13,7 +14,7 @@ public:
     //explicit MainWindow(QWidget *parent = 0);
     MainWindow(QWidget * parent = nullptr);
     ~MainWindow();
-    void update();
+    void update(int direction);
 
 protected:
     // Fonction d'initialisation
@@ -35,6 +36,7 @@ private:
     QTimer m_AnimationTimer_;
     GLuint * m_TextureID_;
     QImage * img_plan_;
+    Traitement* traitement_;
 
     /*
 private:

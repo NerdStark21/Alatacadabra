@@ -22,12 +22,13 @@ using namespace cv;
 Snake::Snake(int width, int heigth, QString HeadImage)
 {
     // Limits of the playground
-    topLeft_ = Point(0,0);
-    bottomRight_=  Point(width,heigth);
+    topLeft_ = Point(-width,heigth);
+    bottomRight_=  Point(width,-heigth);
     headImage_ = HeadImage;
     size_=1;
     direction_=Point(0,1);
     radius_=1;
+    dead_=false;
 
     // Create the snake with 3 bodyparts
     body_.push_back(BodyPart( Point(0,0),true, headImage_));
@@ -63,7 +64,7 @@ Snake::Snake(int width, int heigth, QString HeadImage)
 }
 
 void Snake::Display(){
-    qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
+//    qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
     for(BodyPart b : body_){
         //qDebug()<<"Snake : ["<< body_.front().getCenter().x<<" , "<< body_.front().getCenter().y<<endl;
         b.Display(headImage_);
@@ -72,54 +73,56 @@ void Snake::Display(){
 
 
 void Snake::move(){
-    if(true/*!deadlyPlace()*/){
 
         body_.front().setHead(false);
         BodyPart newPart = BodyPart(body_.front().getCenter()+direction_*2*radius_,true, headImage_);
         body_.push_front(newPart);
+        qDebug()<<"Dead snake: "<< dead_<< endl;
         if(!fruitEaten_){
             body_.pop_back();
         }else{
             fruitEaten_=false;
         }
-
         //body_.back().setCenter(body_.front().getCenter()+direction_);
 
-    }
-    else{
-        dead_=true;
-    }
 }
 
 // Add a body part at the end of the snake.
 void Snake::eatFruit(){
 
-    body_.push_back(BodyPart(body_.back().getCenter(),false, headImage_));
+    //body_.push_back(BodyPart(body_.back().getCenter(),false, headImage_));
     fruitEaten_=true;
     //    body_.push_back(BodyPart(body_.back().getCenter(),false));
 
 }
 
 // Returns a boolean : true if the snake shall die, false if not.
-bool Snake::deadlyPlace(){
+void Snake::deadlyPlace(){
 
     // Point where the head of the snake will move next tick.
-    Point nextPosition=body_.front().getCenter()+direction_;
+    Point nextPosition=body_.front().getCenter()+2*direction_;
     // A rect that shows the limits of the board.
     Rect gameBoard= Rect(topLeft_,bottomRight_);
+    qDebug()<<"Head : ["<<nextPosition.x<<" , "<<nextPosition.y<<" ] "<<endl;
+
+//    for(BodyPart b:body_){
+//        qDebug()<<"["<<b.getCenter().x<<" , "<<b.getCenter().y<<" ] "<<endl;
+//        if(b.getCenter()==nextPosition){
+//            dead_=true;
+//        }
+//    }
 
 
     if(!nextPosition.inside(gameBoard)){
-        return true;
+        dead_=true;
     }
     else{
         for(BodyPart b:body_){
             if(b.getCenter()==nextPosition){
-                return true;
+                dead_=true;
             }
         }
     }
-    return false;
 }
 
 void Snake::setDirection(Point p){
@@ -139,4 +142,12 @@ bool Snake::getFruitEaten(){
 void Snake::setFruitEaten(bool fruit){
     fruitEaten_=fruit;
 
+}
+
+bool Snake::getDead(){
+    return dead_;
+}
+
+void Snake::setDead(bool dead){
+    dead_=dead;
 }

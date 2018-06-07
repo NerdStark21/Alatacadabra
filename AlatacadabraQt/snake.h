@@ -31,13 +31,15 @@ public:
     void drawNode();
     void Display();
     void move();
-    bool deadlyPlace();
+    void deadlyPlace();
     void eatFruit();
     void setDirection(Point p);
     list<BodyPart> getBody(){return body_;}
     QString getPath();
     bool getFruitEaten();
     void setFruitEaten(bool fruit);
+    bool getDead();
+    void setDead(bool dead);
 
 };
 

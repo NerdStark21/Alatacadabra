@@ -38,7 +38,7 @@ public:
     void setSnakeDirection(Point p);
     void intToDirection(int i);
     void createFruit();
-    void update();
+    void update(int direction);
     void fruitEaten();
     int getRandomImgFruit();
     vector<Fruit> getFruits();
