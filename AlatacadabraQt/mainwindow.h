@@ -14,6 +14,7 @@ public:
     MainWindow(QWidget * parent = nullptr);
     ~MainWindow();
     void update();
+    void DrawBackGround();
 
 protected:
     // Fonction d'initialisation

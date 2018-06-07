@@ -34,15 +34,15 @@ Model::Model(int dimension)
     walls_.push_back(wallRight);
 
     // Ajout du snake
-    snake_=Snake(width_,heigth_, QString(":/Alata1.jpg"));
-
+    //snake_=Snake(width_,heigth_, QString(":/Alata1.jpg"));
+    snake_=Snake(width_,heigth_, QString(":/Alata1deform.jpg"));
 
     //Ajout des chemins
-    pathsFruit_.push_back(QString(":/Tocard1.jpg"));
-    pathsFruit_.push_back(QString(":/Tocard2.jpg"));
-    pathsFruit_.push_back(QString(":/Tocard3.jpg"));
-    pathsFruit_.push_back(QString(":/Tocard4.jpg"));
-    pathsFruit_.push_back(QString(":/Tocard5.jpg"));
+    pathsFruit_.push_back(QString(":/Tocard1CarreDeform.png"));
+    pathsFruit_.push_back(QString(":/Tocard2CarreDeform.png"));
+    pathsFruit_.push_back(QString(":/Tocard3CarreDeform.png"));
+    pathsFruit_.push_back(QString(":/Tocard4CarreDeform.png"));
+    pathsFruit_.push_back(QString(":/Tocard5CarreDeform.png"));
 
     //Initialisation du nombre aléatoire permettant de mettre aléatoirement des images sur les fruits
     random_img_fruit_ = 0;

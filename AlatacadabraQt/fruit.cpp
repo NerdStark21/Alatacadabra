@@ -27,9 +27,9 @@ void Fruit::drawFruit(){
     qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
 
-    glRotated(40,0,1,0);
+    glRotated(50,0,1,0);
     glRotated(-45,0,0,1);
-    glRotated(-65,1,0,0);
+    glRotated(-55,1,0,0);
 
     // Couleur de l'objet
     GLfloat colorAmbiante[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};

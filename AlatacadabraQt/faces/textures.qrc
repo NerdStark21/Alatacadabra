@@ -7,5 +7,18 @@
         <file>Tocard3.jpg</file>
         <file>Tocard4.jpg</file>
         <file>Tocard5.jpg</file>
+        <file>Alata1big.png</file>
+        <file>Alata1big2.png</file>
+        <file>Alata1deform.jpg</file>
+        <file>Tocard1deform.jpg</file>
+        <file>Tocard2deform.jpg</file>
+        <file>Tocard3deform.jpg</file>
+        <file>Tocard4deform.jpg</file>
+        <file>Tocard5deform.jpg</file>
+        <file>Tocard1CarreDeform.png</file>
+        <file>Tocard2CarreDeform.png</file>
+        <file>Tocard3CarreDeform.png</file>
+        <file>Tocard4CarreDeform.png</file>
+        <file>Tocard5CarreDeform.png</file>
     </qresource>
 </RCC>

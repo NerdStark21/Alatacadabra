@@ -61,10 +61,10 @@ void MainWindow::initializeGL()
 
     //Réglage de la lumière
 
-    GLfloat color_ambient_light[] = {0.3f, 0.3f, 0.3f, 1.0};
+    GLfloat color_ambient_light[] = {1.0f, 1.0f, 1.0f, 1.0};
     glLightfv(GL_LIGHT0, GL_AMBIENT, color_ambient_light);
 
-    GLfloat color_diffuse_light[] = {0.8f, 0.8f, 0.8f, 1.0};
+    GLfloat color_diffuse_light[] = {1.0f, 1.0f, 1.0f, 1.0};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, color_diffuse_light);
 
     // Activation de la lumiere
@@ -92,6 +92,13 @@ void MainWindow::initializeGL()
     }
 
     img_plan_[5] = QGLWidget :: convertToGLFormat(img);
+
+    QImage img2;
+    if(!img2.load(QString(":/fftAlata1.png"))){
+        std::cout<<"error fond"<<endl;
+    }
+
+    img_plan_[6] = QGLWidget:: convertToGLFormat(img2);
 
     //Chargement des images pour les fruits
     cout<<"taille de fruit :"<<model_->getFruits().size()<<endl;
@@ -152,6 +159,7 @@ void MainWindow::paintGL()
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
+
     // On va dessiner tous les murs et le snake
     model_->Display();
 
@@ -168,6 +176,34 @@ void MainWindow::paintGL()
         f.drawFruit();
     }
 
+
+    //Affichage du fond
+    glBindTexture( GL_TEXTURE_2D, m_TextureID_[6]);
+    glTexImage2D( GL_TEXTURE_2D,0,4, img_plan_[6].width(), img_plan_[6].height(),0,GL_RGBA, GL_UNSIGNED_BYTE, img_plan_[6].bits());
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    DrawBackGround();
+
+
+
+}
+
+void MainWindow::DrawBackGround(){
+
+    glPushMatrix();
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture( GL_TEXTURE_2D, m_TextureID_[6] );
+
+    glBegin(GL_QUADS);
+
+    glTexCoord2d(0.0,0.0); glVertex2f(-30, -30);
+    glTexCoord2d(1.0,0.0); glVertex2f(-30, 30);
+    glTexCoord2d(1.0,1.0); glVertex2f(30, 30);
+    glTexCoord2d(0.0,1.0); glVertex2f(30, -30);
+    glEnd();
+
+    glPopMatrix();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent * event)
