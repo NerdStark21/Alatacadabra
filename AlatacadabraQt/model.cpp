@@ -144,7 +144,7 @@ void Model::createFruit(){
     Point position= Point(2*(rand() % width_/2 - width_/4),2*(rand() % heigth_/2- heigth_/4) );
 
     //Choix au hasard de l'image à mettre sur le fruit :
-    random_img_fruit_ = rand()%4;
+    random_img_fruit_ = rand()%5;
 
     QString path = pathsFruit_.at(random_img_fruit_);
     cout<<"Path réussi"<<endl;
@@ -187,4 +187,8 @@ Snake Model::getSnake(){
 
 int Model::getRandomImgFruit(){
     return random_img_fruit_;
+}
+
+vector<QString> Model::getPathFruit(){
+    return pathsFruit_;
 }

@@ -94,15 +94,16 @@ void MainWindow::initializeGL()
     img_plan_[5] = QGLWidget :: convertToGLFormat(img);
 
     //Chargement des images pour les fruits
-    for (Fruit f : model_->getFruits()){
-        int i = f.getRandomImg();
-        cout<<i<<endl;
+    cout<<"taille de fruit :"<<model_->getFruits().size()<<endl;
+    int i = 0;
+    for (QString p : model_->getPathFruit()){
         QImage img;
-        if(!img.load(f.getPath()))
+        if(!img.load(p))
         {
             std::cout<<"error fruits"<<endl;
         }
         img_plan_[i] = QGLWidget:: convertToGLFormat(img);
+        i+=1;
     }
 
 }

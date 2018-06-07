@@ -20,8 +20,8 @@ void Fruit::drawFruit(){
     qDebug()<<"Affichage du fruit"<<endl;
     int R_,V_,B_;
     R_=100;
-    V_=0;
-    B_=0;
+    V_=100;
+    B_=100;
     glPushMatrix();
     qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
@@ -35,7 +35,7 @@ void Fruit::drawFruit(){
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};
 
-    glColor3f(0.5, 0.0, 0.0);
+    glColor3f(0.5, 0.5, 0.5);
 
     glMaterialfv(GL_FRONT, GL_AMBIENT, colorAmbiante);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, colorDiffuse);

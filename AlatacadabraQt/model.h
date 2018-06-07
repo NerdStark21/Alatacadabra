@@ -43,6 +43,7 @@ public:
     int getRandomImgFruit();
     vector<Fruit> getFruits();
     Snake getSnake();
+    vector<QString> getPathFruit();
 };
 
 #endif // MODEL_H

@@ -16,12 +16,19 @@ BodyPart::BodyPart(Point center, bool head, QString headImage){
 
 void BodyPart::Display(QString headImage){
 
-//    qDebug()<<"Display de BodyPart"<<endl;
+    //    qDebug()<<"Display de BodyPart"<<endl;
 
     int R_,V_,B_;
-    R_=0;
-    V_=100;
-    B_=100;
+    if(!head_){
+        R_=0;
+        V_=100;
+        B_=100;
+    }
+    else{
+        R_=100;
+        V_=100;
+        B_=100;
+    }
     glPushMatrix();
     glTranslated(center_.x,center_.y,0);
     glRotated(40,0,1,0);
@@ -32,7 +39,12 @@ void BodyPart::Display(QString headImage){
     GLfloat colorDiffuse[] = {GLfloat(R_)/255, GLfloat(V_)/255, GLfloat(B_)/255, 1.0f};
     //GLfloat colorSpeculaire_planet[] = {0.5f, 0.5f, 0.5f, 1.0f};
 
-    glColor3f(0.0, 1.0, 1.0);
+    if(!head_){
+        glColor3f(0.0, 1.0, 1.0);
+    }
+    else{
+        glColor3f(0.5,0.5,0.5);
+    }
 
     glMaterialfv(GL_FRONT, GL_AMBIENT, colorAmbiante);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, colorDiffuse);
