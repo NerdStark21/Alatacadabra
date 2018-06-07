@@ -53,6 +53,10 @@ Model::Model(int dimension)
 
 void Model::update(){
     //qDebug()<<"Fruits : ["<<fruits_.front().getPosition().x<<" , "<<fruits_.front().getPosition().y<<"] "<< endl;
+    snake_.deadlyPlace();
+    if(snake_.getDead()){
+            snake_=Snake(width_,heigth_, QString(":/Alata1.jpg"));
+    }
     snake_.move();
     fruitEaten();
 }

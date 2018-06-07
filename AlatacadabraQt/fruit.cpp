@@ -10,7 +10,7 @@ Fruit::Fruit(Point position, QString path, int randomImg){
 }
 
 Fruit::~Fruit(){
-    qDebug()<<"destruction de la quadrique"<<endl;
+//    qDebug()<<"destruction de la quadrique"<<endl;
     gluDeleteQuadric(quadrique_);
 }
 
@@ -18,13 +18,13 @@ Fruit::~Fruit(){
 
 void Fruit::drawFruit(){
     // Affichage de la quadrique
-    qDebug()<<"Affichage du fruit"<<endl;
+//    qDebug()<<"Affichage du fruit"<<endl;
     int R_,V_,B_;
     R_=100;
     V_=100;
     B_=100;
     glPushMatrix();
-    qDebug()<<position_.x<<"   "<<position_.y<<endl;
+//    qDebug()<<position_.x<<"   "<<position_.y<<endl;
     glTranslated(position_.x,position_.y,0);
 
     glRotated(50,0,1,0);

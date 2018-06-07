@@ -4,6 +4,7 @@
 #include <QMainWindow>
 //#include "ui_mainwindow.h"
 #include "model.h"
+#include "traitement.h"
 
 class MainWindow : public QGLWidget
 {
@@ -15,6 +16,7 @@ public:
     ~MainWindow();
     void update();
     void DrawBackGround();
+    Model* getModel();
 
 protected:
     // Fonction d'initialisation
@@ -27,6 +29,8 @@ protected:
     void paintGL();
 
     void keyPressEvent(QKeyEvent * event);
+
+
 
 private:
     int width_;

@@ -38,10 +38,17 @@ MainWindow::MainWindow(QWidget *parent) :
     // Création du modèle
     int dimension=MAX_DIMENSION;
     model_ = new Model(dimension);
+
 }
 
 void MainWindow::update(){
     model_->update();
+
+    //model_->update(traitement_.getDirection());
+
+//    if(model_->getSnake().getDead()){
+//        model_=new Model(MAX_DIMENSION);
+//    }
 }
 
 
@@ -271,5 +278,9 @@ void MainWindow::keyPressEvent(QKeyEvent * event)
 
     // Acceptation de l'evenement et mise a jour de la scene
     event->accept();
+
+}
+
+Model* MainWindow::getModel(){
 
 }
